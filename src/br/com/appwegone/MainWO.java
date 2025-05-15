@@ -181,7 +181,7 @@ public class MainWO {
 					do {
 			        	
 			        	System.out.println("╔═════════════════════════════════════╗");
-			            System.out.println("║            SISTEMA WEGONE           ║");
+			            System.out.println("║            WEGONE SYSTEM            ║");
 			            System.out.println("╚═════════════════════════════════════╝");
 			            System.out.println("  1 - 📝 Register Orientation        ");
 			            System.out.println("  2 - 🔍 Search for Orientation        ");
@@ -332,6 +332,149 @@ public class MainWO {
 			
 			
 				case 3: //Deutsch
+					do {	
+			        	System.out.println("╔═════════════════════════════════════╗");
+			            System.out.println("║            WEGONE-SYSTEM            ║");
+			            System.out.println("╚═════════════════════════════════════╝");
+			            System.out.println("  1 - 📝 Register Orientation        ");
+			            System.out.println("  2 - 🔍 Search for Orientation        ");
+			            System.out.println("  3 - ✏️ Edit Orientation           ");
+			            System.out.println("  4 - 🗑️ Remove Orientation          ");
+			            System.out.println("  5 - 👋 Leave System                        ");
+			            System.out.println("═══════════════════════════════════════");
+			            System.out.print("  ? - Your choice: ");
+						escolhaMenu = leiaNum.nextInt(); //Escolha do usuário no menu
+						
+						switch(escolhaMenu) { //MENU PRINCIPAL 
+						case 1:
+							English.cadastrar_orientacoes_english(leiaStr, leiaNum);
+						break; // BREAK DO CASE 1 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+						
+						case 2:
+							System.out.println("\n╔═════════════════════════════════════╗");
+				            System.out.println("║        SEARCH FOR ORIENTATION       ║");
+				            System.out.println("╚═════════════════════════════════════╝");
+				            System.out.println("  1 - 🧾 All Orientations        ");
+				            System.out.println("  2 - 📄 Especific Orientation        ");
+				            System.out.println("═══════════════════════════════════════");
+				            System.out.print("  ? - Your choice: ");
+							escolhaPesquisa = leiaNum.nextInt();
+							
+							switch(escolhaPesquisa) { //MENU DE PESQUISA
+							case 1:
+								English.listar_todas_orientacoes_english();
+							break; // BREAK DO CASE 1 DO BLOCO switch(escolhaPesquisa)
+							
+							//------------------------------------------------------------
+							
+							case 2 :
+								System.out.println("\n╔═════════════════════════════════════╗");
+					            System.out.println("║          ESPECIFIC SEARCH          ║");
+					            System.out.println("╚═════════════════════════════════════╝");
+					            System.out.println("  1 - 📊 Search by Type          ");
+					            System.out.println("  2 - 📊 Search by ID        ");
+					            System.out.println("  3 - 📊 Search by Title        ");
+					            System.out.println("═══════════════════════════════════════");
+					            System.out.print("  ? - Your search choice : ");
+								escolhaBuscaEspecifica = leiaNum.nextInt(); 
+								
+								switch(escolhaBuscaEspecifica) { //MENU DE PESQUISA ESPECÍFICA
+								case 1: 
+									System.out.println("\n╔═══════════════════════════════════════════════╗");
+						            System.out.println("║             BY TYPE OF ORIENTATION            ║");
+						            System.out.println("╚═══════════════════════════════════════════════╝");
+									System.out.println("  1 - 📊 Search by Type          ");
+									System.out.println("═════════════════════════════════════════════════");
+						            System.out.println("  1 - 🗂️ Operation manual                       ");
+						            System.out.println("  2 - 🗂️ Safety procedure                       ");
+						            System.out.println("  3 - 🗂️ Maintenance and Repairs                ");
+						            System.out.println("  4 - 🗂️ Tests and Diagnostics                  ");
+						            System.out.println("  5 - 🗂️ Sectoral Conduct and Operations Manual ");
+						            System.out.println("═════════════════════════════════════════════════");
+						            System.out.print("  ? - Enter the orientation type: ");
+						            int tipoLeitura = leiaNum.nextInt();
+						            
+						            English.listar_orientacoes_english_pelo_tipo(tipoLeitura);
+							        
+								break; // BREAK DO CASE 1 DO BLOCO switch(escolhaBuscaEspecifica)
+							
+								//------------------------------------------------------------
+								
+								case 2:
+									System.out.println("\n╔═════════════════════════════════════╗");
+						            System.out.println("║          BY ORIENTATION ID          ║");
+						            System.out.println("╚═════════════════════════════════════╝");
+						            System.out.println("  2 - 📊 Search by ID               ");
+						            System.out.println("══════════════════════════════════════");
+						            System.out.print("  ? - Enter the ID: ");
+							        int codigo_orientacao = leiaNum.nextInt();
+							        
+							        English.listar_orientacao_pelo_codigo_english(codigo_orientacao);
+									break;	// BREAK DO CASE 2 DO BLOCO switch(escolhaBuscaEspecifica)
+								
+								//------------------------------------------------------------
+									
+								case 3: 
+									System.out.println("\n╔═════════════════════════════════════╗");
+						            System.out.println("║         BY ORIENTATION TITLE        ║");
+						            System.out.println("╚═════════════════════════════════════╝");
+						            System.out.println("  3 - 📊 Search by Title                ");
+						            System.out.println("══════════════════════════════════════");
+						            System.out.print("  ? - Enter the title: ");
+							    	String titulo_orientacao = leiaStr.nextLine();
+							    	
+							    	English.listar_orientacao_pelo_titulo_english(titulo_orientacao);
+									break; // BREAK DO CASE 3 DO BLOCO switch(escolhaBuscaEspecifica)
+									
+								//------------------------------------------------------------
+									
+								default:
+									System.out.println("\n╔═════════════════════════════════════╗");
+						            System.out.println("║           INVALID CHOICE            ║");
+						            System.out.println("╚═════════════════════════════════════╝");
+									break; // BREAK DO DEFAULT DO BLOCO switch(escolhaBuscaEspecifica)
+									
+								}// Fechando chaves do bloco switch(escolhaBuscaEspecifica)
+								
+							break; // BREAK DO CASE 2 DO BLOCO switch(escolhaPesquisa)
+							
+							//------------------------------------------------------------
+							
+							}// Fechando chaves do bloco switch(escolhaPesquisa)
+							
+						break; // BREAK DO CASE 2 DO BLOCO switch(escolhaMenu)
+						
+						//------------------------------------------------------------
+							
+						case 3:
+							English.editar_orientaçao_titulo_pelo_id_english(leiaNum, leiaStr);
+							break; // BREAK DO CASE 3 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+							
+						case 4:
+							English.deletar_orientação_english(leiaNum);
+							break; // BREAK DO CASE 4 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+								
+						case 5: 
+							English.mensagem_sair_sistema_english();
+							break; // BREAK DO CASE 5 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+							
+						default:
+							System.out.println("\n╔═════════════════════════════════════╗");
+				            System.out.println("║           INVALID CHOICE            ║");
+				            System.out.println("╚═════════════════════════════════════╝");
+							break; // BREAK DO DEFAULT DO BLOCO switch(escolhaMenu)
+							
+						}// Fechando chaves do bloco switch(escolhaMenu)
+		
+			        }while(escolhaMenu != 5);
 			break; // BREAK DO CASE 3 DO BLOCO switch(escolhaIdioma) Deutsch
 			
 			
@@ -341,6 +484,149 @@ public class MainWO {
 			
 			
 				case 4: //Français
+				do {	
+			        	System.out.println("╔═════════════════════════════════════╗");
+			            System.out.println("║            SYSTÈME WEGONE           ║");
+			            System.out.println("╚═════════════════════════════════════╝");
+			            System.out.println("  1 - 📝 Register Orientation        ");
+			            System.out.println("  2 - 🔍 Search for Orientation        ");
+			            System.out.println("  3 - ✏️ Edit Orientation           ");
+			            System.out.println("  4 - 🗑️ Remove Orientation          ");
+			            System.out.println("  5 - 👋 Leave System                        ");
+			            System.out.println("═══════════════════════════════════════");
+			            System.out.print("  ? - Your choice: ");
+						escolhaMenu = leiaNum.nextInt(); //Escolha do usuário no menu
+						
+						switch(escolhaMenu) { //MENU PRINCIPAL 
+						case 1:
+							English.cadastrar_orientacoes_english(leiaStr, leiaNum);
+						break; // BREAK DO CASE 1 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+						
+						case 2:
+							System.out.println("\n╔═════════════════════════════════════╗");
+				            System.out.println("║        SEARCH FOR ORIENTATION       ║");
+				            System.out.println("╚═════════════════════════════════════╝");
+				            System.out.println("  1 - 🧾 All Orientations        ");
+				            System.out.println("  2 - 📄 Especific Orientation        ");
+				            System.out.println("═══════════════════════════════════════");
+				            System.out.print("  ? - Your choice: ");
+							escolhaPesquisa = leiaNum.nextInt();
+							
+							switch(escolhaPesquisa) { //MENU DE PESQUISA
+							case 1:
+								English.listar_todas_orientacoes_english();
+							break; // BREAK DO CASE 1 DO BLOCO switch(escolhaPesquisa)
+							
+							//------------------------------------------------------------
+							
+							case 2 :
+								System.out.println("\n╔═════════════════════════════════════╗");
+					            System.out.println("║          ESPECIFIC SEARCH          ║");
+					            System.out.println("╚═════════════════════════════════════╝");
+					            System.out.println("  1 - 📊 Search by Type          ");
+					            System.out.println("  2 - 📊 Search by ID        ");
+					            System.out.println("  3 - 📊 Search by Title        ");
+					            System.out.println("═══════════════════════════════════════");
+					            System.out.print("  ? - Your search choice : ");
+								escolhaBuscaEspecifica = leiaNum.nextInt(); 
+								
+								switch(escolhaBuscaEspecifica) { //MENU DE PESQUISA ESPECÍFICA
+								case 1: 
+									System.out.println("\n╔═══════════════════════════════════════════════╗");
+						            System.out.println("║             BY TYPE OF ORIENTATION            ║");
+						            System.out.println("╚═══════════════════════════════════════════════╝");
+									System.out.println("  1 - 📊 Search by Type          ");
+									System.out.println("═════════════════════════════════════════════════");
+						            System.out.println("  1 - 🗂️ Operation manual                       ");
+						            System.out.println("  2 - 🗂️ Safety procedure                       ");
+						            System.out.println("  3 - 🗂️ Maintenance and Repairs                ");
+						            System.out.println("  4 - 🗂️ Tests and Diagnostics                  ");
+						            System.out.println("  5 - 🗂️ Sectoral Conduct and Operations Manual ");
+						            System.out.println("═════════════════════════════════════════════════");
+						            System.out.print("  ? - Enter the orientation type: ");
+						            int tipoLeitura = leiaNum.nextInt();
+						            
+						            English.listar_orientacoes_english_pelo_tipo(tipoLeitura);
+							        
+								break; // BREAK DO CASE 1 DO BLOCO switch(escolhaBuscaEspecifica)
+							
+								//------------------------------------------------------------
+								
+								case 2:
+									System.out.println("\n╔═════════════════════════════════════╗");
+						            System.out.println("║          BY ORIENTATION ID          ║");
+						            System.out.println("╚═════════════════════════════════════╝");
+						            System.out.println("  2 - 📊 Search by ID               ");
+						            System.out.println("══════════════════════════════════════");
+						            System.out.print("  ? - Enter the ID: ");
+							        int codigo_orientacao = leiaNum.nextInt();
+							        
+							        English.listar_orientacao_pelo_codigo_english(codigo_orientacao);
+									break;	// BREAK DO CASE 2 DO BLOCO switch(escolhaBuscaEspecifica)
+								
+								//------------------------------------------------------------
+									
+								case 3: 
+									System.out.println("\n╔═════════════════════════════════════╗");
+						            System.out.println("║         BY ORIENTATION TITLE        ║");
+						            System.out.println("╚═════════════════════════════════════╝");
+						            System.out.println("  3 - 📊 Search by Title                ");
+						            System.out.println("══════════════════════════════════════");
+						            System.out.print("  ? - Enter the title: ");
+							    	String titulo_orientacao = leiaStr.nextLine();
+							    	
+							    	English.listar_orientacao_pelo_titulo_english(titulo_orientacao);
+									break; // BREAK DO CASE 3 DO BLOCO switch(escolhaBuscaEspecifica)
+									
+								//------------------------------------------------------------
+									
+								default:
+									System.out.println("\n╔═════════════════════════════════════╗");
+						            System.out.println("║           INVALID CHOICE            ║");
+						            System.out.println("╚═════════════════════════════════════╝");
+									break; // BREAK DO DEFAULT DO BLOCO switch(escolhaBuscaEspecifica)
+									
+								}// Fechando chaves do bloco switch(escolhaBuscaEspecifica)
+								
+							break; // BREAK DO CASE 2 DO BLOCO switch(escolhaPesquisa)
+							
+							//------------------------------------------------------------
+							
+							}// Fechando chaves do bloco switch(escolhaPesquisa)
+							
+						break; // BREAK DO CASE 2 DO BLOCO switch(escolhaMenu)
+						
+						//------------------------------------------------------------
+							
+						case 3:
+							English.editar_orientaçao_titulo_pelo_id_english(leiaNum, leiaStr);
+							break; // BREAK DO CASE 3 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+							
+						case 4:
+							English.deletar_orientação_english(leiaNum);
+							break; // BREAK DO CASE 4 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+								
+						case 5: 
+							English.mensagem_sair_sistema_english();
+							break; // BREAK DO CASE 5 DO BLOCO switch(escolhaMenu)
+							
+						//------------------------------------------------------------
+							
+						default:
+							System.out.println("\n╔═════════════════════════════════════╗");
+				            System.out.println("║           INVALID CHOICE            ║");
+				            System.out.println("╚═════════════════════════════════════╝");
+							break; // BREAK DO DEFAULT DO BLOCO switch(escolhaMenu)
+							
+						}// Fechando chaves do bloco switch(escolhaMenu)
+		
+			        }while(escolhaMenu != 5);
 			break; // BREAK DO CASE 4 DO BLOCO switch(escolhaIdioma) Français
 			
 			

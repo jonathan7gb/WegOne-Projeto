@@ -290,13 +290,13 @@ public class Alemao {
                     
                     System.out.print("  ? - Neuer titel (drücken Enter um den Strom aufrechtzuerhalten): ");
                     titulo_orientacao = leiaStr.nextLine();
-                    if (titulo_orientacao.trim().isEmALy()) {
+                    if (titulo_orientacao.trim().isEmpty()) {
                     	titulo_orientacao = tituloAtual;
                     }
 
                     System.out.print("  ? - Neuer Inhalt (pressione Enter um den Strom aufrechtzuerhalten): ");
                     conteudo_orientacao = leiaStr.nextLine();
-                    if (conteudo_orientacao.trim().isEmALy()) {
+                    if (conteudo_orientacao.trim().isEmpty()) {
                     	conteudo_orientacao = conteudoAtual;
                     }
                    
