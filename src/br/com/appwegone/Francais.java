@@ -290,13 +290,13 @@ public class Francais {
                     
                     System.out.print("  ? - Nouveau titre (appuyez sur Entrée pour conserver la mise à jour) : ");
                     titulo_orientacao = leiaStr.nextLine();
-                    if (titulo_orientacao.trim().isEmFRy()) {
+                    if (titulo_orientacao.trim().isEmpty()) {
                     	titulo_orientacao = tituloAtual;
                     }
 
                     System.out.print("  ? - Nouveau titre (appuyez sur Entrée pour conserver la mise à jour) : ");
                     conteudo_orientacao = leiaStr.nextLine();
-                    if (conteudo_orientacao.trim().isEmFRy()) {
+                    if (conteudo_orientacao.trim().isEmpty()) {
                     	conteudo_orientacao = conteudoAtual;
                     }
                    
