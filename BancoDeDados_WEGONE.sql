@@ -38,11 +38,11 @@ create table orientacoesEnglish(
 
 -- INSERE UMA NOVA ORIENTACAO NA TABELA
 insert into orientacoesEnglish(titulo_orientacaoEN, tipo_orientacaoEN, conteudo_orientacaoEN)
-values('Guidance 01', 'Operation manual', 'Content of guidance 01'),
-('Guidance 02', 'Maintenance and Repairs', 'Content of guidance 02'),
-('Guidance 03', 'Tests and Diagnostics', 'Content of guidance 03'),
-('Guidance 04', 'Safety procedure', 'Content of guidance 04'),
-('Guidance 05', 'Sectoral Conduct and Operations Manual', 'Content of guidance 05');
+values('Orientation 01', 'Operation manual', 'Content of Orientation 01'),
+('Orientation 02', 'Maintenance and Repairs', 'Content of Orientation 02'),
+('Orientation 03', 'Tests and Diagnostics', 'Content of Orientation 03'),
+('Orientation 04', 'Safety procedure', 'Content of Orientation 04'),
+('Orientation 05', 'Sectoral Conduct and Operations Manual', 'Content of Orientation 05');
 
 -- RETORNA TODAS AS ORIENTAÇÕES CONTIDAS NA TABELAS
 select * from orientacoesEnglish; 
