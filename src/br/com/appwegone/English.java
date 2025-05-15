@@ -11,6 +11,7 @@ public class English{
 			String titulo_orientacao = null;
 			String conteudo_orientacao = null;
             String tipo = "";
+            Thread.sleep(350);
             
             System.out.println("\n╔═════════════════════════════════════╗");
             System.out.println("║           REGISTER GUIDANCE         ║");
@@ -45,14 +46,16 @@ public class English{
                     break;
             }
             if(tipo.equals("")){
+                Thread.sleep(350);
             	System.out.println("\n╔═════════════════════════════════════╗");
 	            System.out.println("║         ORIENTATION INVALID         ║");
 	            System.out.println("╚═════════════════════════════════════╝\n");
             }else{
-            	
-            	System.out.print("  ? - Title of the guideline: ");
+            	Thread.sleep(350);
+            	System.out.print("  ? - Title of the orientation: ");
                 titulo_orientacao = leiaStr.nextLine();
 
+                Thread.sleep(350);
                 // Verifica se já existe esse título no banco
                 String sqlVerifica = "SELECT COUNT(*) FROM orientacoesEnglish WHERE titulo_orientacaoEN = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
@@ -62,6 +65,7 @@ public class English{
                 int quantidade = rs.getInt(1);
                 
                 if (quantidade > 0) {
+                    
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║   ERROR! TITLE ALREADY REGISTERED   ║");
                     System.out.println("╚═════════════════════════════════════╝\n");
@@ -75,7 +79,8 @@ public class English{
 	                stmt.setString(2, tipo);
 	                stmt.setString(3, conteudo_orientacao);
 	                stmt.executeUpdate();
-	
+
+                    Thread.sleep(350);
 	                System.out.println("\n╔═══════════════════════════════════════╗");
 		            System.out.println("║  ORIENTATION SUCCESSFULLY REGISTERED  ║");
 		            System.out.println("╚═══════════════════════════════════════╝\n");
@@ -99,18 +104,20 @@ public class English{
             
             System.out.println("");
             while (rs.next()) {
-            	 encontrado = true;
-            	 System.out.println("╔══════════════════════════════════════════╗");
-                 System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
-                 System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
-                 System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
-                 System.out.println("╚══════════════════════════════════════════╝");
-                 Thread.sleep(350);            
+                Thread.sleep(350);
+            	encontrado = true;
+            	System.out.println("╔══════════════════════════════════════════╗");
+                System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
+                System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
+                System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
+                System.out.println("╚══════════════════════════════════════════╝");
+                Thread.sleep(350);            
             }
             if(encontrado == true) {
             	System.out.println("");
             }
             if(encontrado != true) {
+                Thread.sleep(350);
             	System.out.println("╔═════════════════════════════════════╗");
 	            System.out.println("║        NO ORIENTATION FOUND         ║");
 	            System.out.println("╚═════════════════════════════════════╝\n");
