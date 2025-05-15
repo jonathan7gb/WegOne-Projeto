@@ -3,61 +3,58 @@ import br.com.conexaobanco.*;
 import java.sql.*;
 import java.util.*;
 
-public class English{
+public class Francais {
 
-	public static void cadastrar_orientacoes_english(Scanner leiaStr, Scanner leiaNum) {
+	public static void cadastrar_orientacoes_francais(Scanner leiaStr, Scanner leiaNum) {
 		try (Connection conn = Conexao.getConexao()) {
 			
 			String titulo_orientacao = null;
 			String conteudo_orientacao = null;
             String tipo = "";
-            Thread.sleep(350);
             
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║           REGISTER GUIDANCE         ║");
+            System.out.println("║          S'INSCRIRE        ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.println("  1 - 🗂️ Operation manual                    ");
-            System.out.println("  2 - 🗂️ Safety procedure                    ");
-            System.out.println("  3 - 🗂️ Maintenance and Repairs             ");
-            System.out.println("  4 - 🗂️ Tests and Diagnostics               ");
-            System.out.println("  5 - 🗂️ Sectoral Conduct and Operations Manual");
+            System.out.println("  1 - 🗂️ Manuel d'utilisation             ");
+            System.out.println("  2 - 🗂️ Procédure de sécurité        ");
+            System.out.println("  3 - 🗂️ Entretien et réparations            ");
+            System.out.println("  4 - 🗂️ Tests et diagnostics            ");
+            System.out.println("  5 - 🗂️ Manuel de conduite et d'exploitation sectoriel ");
             System.out.println("═══════════════════════════════════════");
-            System.out.print("  ? - Enter the type of orientation: ");
+            System.out.print("  ? - Entrez le type: ");
             int tipoLeitura = leiaNum.nextInt();
                 
             switch(tipoLeitura){
                 case 1:
-                    tipo = "Operation manual"; 
+                    tipo = "Manuel d'utilisation"; 
                     break;
                 case 2:
-                    tipo = "Safety procedure"; 
+                    tipo = "Procédure de sécurité"; 
                     break;
                 case 3:
-                    tipo = "Maintenance and Repairs"; 
+                    tipo = "Entretien et réparations"; 
                     break;
                 case 4:
-                    tipo = "Tests and Diagnostics"; 
+                    tipo = "Tests et diagnostics"; 
                     break;
                 case 5:
-                    tipo = "Sectoral Conduct and Operations Manual"; 
+                    tipo = "Manuel de conduite et d'exploitation sectoriel"; 
                     break;
                 default:
                     tipo = ""; 
                     break;
             }
             if(tipo.equals("")){
-                Thread.sleep(350);
             	System.out.println("\n╔═════════════════════════════════════╗");
-	            System.out.println("║         ORIENTATION INVALID         ║");
+	            System.out.println("║        ORIENTATION INVALIDE         ║");
 	            System.out.println("╚═════════════════════════════════════╝\n");
             }else{
-            	Thread.sleep(350);
-            	System.out.print("  ? - Title of the orientation: ");
+            	
+            	System.out.print("  ? - Titre de l'orientation: ");
                 titulo_orientacao = leiaStr.nextLine();
 
-                Thread.sleep(350);
                 // Verifica se já existe esse título no banco
-                String sqlVerifica = "SELECT COUNT(*) FROM orientacoesEnglish WHERE titulo_orientacaoEN = ?";
+                String sqlVerifica = "SELECT COUNT(*) FROM orientacoesFrances WHERE titulo_orientacaoFR = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
                 pstmt.setString(1, titulo_orientacao);
                 ResultSet rs = pstmt.executeQuery();
@@ -65,25 +62,23 @@ public class English{
                 int quantidade = rs.getInt(1);
                 
                 if (quantidade > 0) {
-                    
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║   ERROR! TITLE ALREADY REGISTERED   ║");
+                    System.out.println("║    ERREUR! TITRE DÉJÀ ENREGISTRÉ    ║");
                     System.out.println("╚═════════════════════════════════════╝\n");
                 } else {
-                	System.out.print("  ? - Orientation Content: ");
+                	System.out.print("  ? - Contenu du guide: ");
 	                conteudo_orientacao = leiaStr.nextLine();
 	                
-	                String sql2 = "INSERT INTO orientacoesEnglish (titulo_orientacaoEN, tipo_orientacaoEN, conteudo_orientacaoEN) VALUES (?, ?, ?)";
+	                String sql2 = "INSERT INTO orientacoesFrances (titulo_orientacaoFR, tipo_orientacaoFR	, conteudo_orientacaoFR) VALUES (?, ?, ?)";
 	                PreparedStatement stmt = conn.prepareStatement(sql2);
 	                stmt.setString(1, titulo_orientacao);
 	                stmt.setString(2, tipo);
 	                stmt.setString(3, conteudo_orientacao);
 	                stmt.executeUpdate();
-
-                    Thread.sleep(350);
-	                System.out.println("\n╔═══════════════════════════════════════╗");
-		            System.out.println("║  ORIENTATION SUCCESSFULLY REGISTERED  ║");
-		            System.out.println("╚═══════════════════════════════════════╝\n");
+	
+	                System.out.println("\n╔═════════════════════════════════════╗");
+		            System.out.println("║  GUIDANCE ENREGISTRÉ AVEC SUCCÈS  ║");
+		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
             }
         } catch (Exception e) {
@@ -95,31 +90,29 @@ public class English{
 //-------------------------------------------------------------------------------------------------------------
 	
 	
-    public static void listar_todas_orientacoes_english(){
+    public static void listar_todas_orientacoes_Francais(){
     	try (Connection conn = Conexao.getConexao()) {
     		boolean encontrado = false;
-            String sql = "SELECT * FROM orientacoesEnglish";
+            String sql = "SELECT * FROM orientacoesFrances";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             
             System.out.println("");
             while (rs.next()) {
-                Thread.sleep(350);
-            	encontrado = true;
-            	System.out.println("╔══════════════════════════════════════════╗");
-                System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
-                System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
-                System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
-                System.out.println("╚══════════════════════════════════════════╝");
-                Thread.sleep(350);            
+            	 encontrado = true;
+            	 System.out.println("╔══════════════════════════════════════════╗");
+                 System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoFR"), rs.getString("titulo_orientacaoFR"));
+                 System.out.println("   Taper: " + rs.getString("tipo_orientacaoFR") );
+                 System.out.println("   Contenu: " + rs.getString("conteudo_orientacaoFR"));
+                 System.out.println("╚══════════════════════════════════════════╝");
+                 Thread.sleep(350);            
             }
             if(encontrado == true) {
             	System.out.println("");
             }
             if(encontrado != true) {
-                Thread.sleep(350);
             	System.out.println("╔═════════════════════════════════════╗");
-	            System.out.println("║        NO ORIENTATION FOUND         ║");
+	            System.out.println("║      AUCUNE ORIENTATION TROUVÉE     ║");
 	            System.out.println("╚═════════════════════════════════════╝\n");
             }
         } catch (Exception e) {
@@ -131,29 +124,29 @@ public class English{
 //-------------------------------------------------------------------------------------------------------------
   	
   	
-    public static void listar_orientacoes_english_pelo_tipo(int tipoOrientacao) {
+    public static void listar_orientacoes_Francais_pelo_tipo(int tipoOrientacao) {
     	boolean encontrado = false;
     	try (Connection conn = Conexao.getConexao()) {
-            String sql = "SELECT * FROM orientacoesEnglish where tipo_orientacaoEN = ?";
+            String sql = "SELECT * FROM orientacoesFrances where tipo_orientacaoFR = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
            
             String tipoOrientacaoStr = "";
             
             switch(tipoOrientacao) {
             case 1:
-            	tipoOrientacaoStr = "Operation manual"; 
+            	tipoOrientacaoStr = "Manuel d'utilisation"; 
                 break;
             case 2:
-            	tipoOrientacaoStr = "Safety procedure"; 
+            	tipoOrientacaoStr = "Procédure de sécurité"; 
                 break;
             case 3:
-            	tipoOrientacaoStr = "Maintenance and Repairs"; 
+            	tipoOrientacaoStr = "Entretien et réparations"; 
                 break;
             case 4:
-            	tipoOrientacaoStr = "Tests and Diagnostics"; 
+            	tipoOrientacaoStr = "Tests et diagnostics"; 
                 break;
             case 5:
-            	tipoOrientacaoStr = "Sectoral Conduct and Operations Manual"; 
+            	tipoOrientacaoStr = "Manuel de conduite et d'exploitation sectoriel"; 
                 break;
             default:
             	tipoOrientacaoStr = ""; 
@@ -169,9 +162,9 @@ public class English{
             while (rs.next()) {
             	encontrado = true;
             	System.out.println("╔══════════════════════════════════════════╗");
-                System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
-                System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
-                System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
+                System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoFR"), rs.getString("titulo_orientacaoFR"));
+                System.out.println("   Taper: " + rs.getString("tipo_orientacaoFR") );
+                System.out.println("   Contenu: " + rs.getString("conteudo_orientacaoFR"));
                 System.out.println("╚══════════════════════════════════════════╝");
             	
             }
@@ -180,7 +173,7 @@ public class English{
             }
             if(encontrado != true) {
             	System.out.println("╔═════════════════════════════════════╗");
-	            System.out.println("║        NO ORIENTATION FOUND         ║");
+	            System.out.println("║      AUCUNE ORIENTATION TROUVÉE     ║");
 	            System.out.println("╚═════════════════════════════════════╝\n");
             }
         } catch (Exception e) {
@@ -192,10 +185,10 @@ public class English{
 //-------------------------------------------------------------------------------------------------------------
   	
   	
-    	public static void listar_orientacao_pelo_codigo_english(int Codigo_orientacao){
+    	public static void listar_orientacao_pelo_codigo_Francais(int Codigo_orientacao){
         	try (Connection conn = Conexao.getConexao()) {
         		boolean encontrado = false;
-                String sql = "select * from orientacoesEnglish where codigo_orientacaoEN = ?; ";
+                String sql = "select * from orientacoesFrances where codigo_orientacaoFR = ?; ";
                 PreparedStatement pstmt = conn.prepareStatement(sql);
                 pstmt.setInt(1, Codigo_orientacao);
                 ResultSet rs = pstmt.executeQuery();
@@ -205,9 +198,9 @@ public class English{
                 while (rs.next()) {
                 	encontrado = true;
                 	System.out.println("╔══════════════════════════════════════════╗");
-                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
-                    System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
-                    System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
+                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoFR"), rs.getString("titulo_orientacaoFR"));
+                    System.out.println("   Taper: " + rs.getString("tipo_orientacaoFR") );
+                    System.out.println("   Contenu: " + rs.getString("conteudo_orientacaoFR"));
                     System.out.println("╚══════════════════════════════════════════╝");
                 }
                 if(encontrado == true) {
@@ -215,7 +208,7 @@ public class English{
                 }
                 if(encontrado != true) {
                 	System.out.println("╔═════════════════════════════════════╗");
-    	            System.out.println("║        NO ORIENTATION FOUND         ║");
+    	            System.out.println("║    AUCUNE ORIENTATION TROUVÉE       ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }
                 
@@ -228,10 +221,10 @@ public class English{
 //-------------------------------------------------------------------------------------------------------------
     		
     		
-    	public static void listar_orientacao_pelo_titulo_english(String titulo_orientacao){
+    	public static void listar_orientacao_pelo_titulo_Francais(String titulo_orientacao){
         	try (Connection conn = Conexao.getConexao()) {
         		boolean encontrado = false;
-                String sql = "select * from orientacoesEnglish where titulo_orientacaoEN = ?; ";
+                String sql = "select * from orientacoesFrances where titulo_orientacaoFR = ?; ";
                 PreparedStatement pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, titulo_orientacao);
                 ResultSet rs = pstmt.executeQuery();
@@ -241,9 +234,9 @@ public class English{
                 while (rs.next()) {
                 	encontrado = true;
                 	System.out.println("╔══════════════════════════════════════════╗");
-                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
-                    System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
-                    System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
+                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoFR"), rs.getString("titulo_orientacaoFR"));
+                    System.out.println("   Taper: " + rs.getString("tipo_orientacaoFR") );
+                    System.out.println("   Contenu: " + rs.getString("conteudo_orientacaoFR"));
                     System.out.println("╚══════════════════════════════════════════╝");
                 }
                 
@@ -252,7 +245,7 @@ public class English{
                 }
                 if(encontrado != true) {
                 	System.out.println("╔═════════════════════════════════════╗");
-    	            System.out.println("║        NO ORIENTATION FOUND         ║");
+    	            System.out.println("║    AUCUNE ORIENTATION TROUVÉE       ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }
                 
@@ -265,7 +258,7 @@ public class English{
 //-------------------------------------------------------------------------------------------------------------
     		
     			
-    	public static void editar_orientaçao_titulo_pelo_id_english(Scanner leiaNum, Scanner leiaStr){
+    	public static void editar_orientaçao_titulo_pelo_id_Francais(Scanner leiaNum, Scanner leiaStr){
     		try (Connection conn = Conexao.getConexao()) {
     			boolean encontrado = false;
     			
@@ -273,35 +266,35 @@ public class English{
     			String conteudo_orientacao = null;
     			
     			System.out.println("\n╔═════════════════════════════════════╗");
-                System.out.println("║          EDIT ORIENTATION           ║");
+                System.out.println("║         GUIDE DE MODIFICATION       ║");
                 System.out.println("╚═════════════════════════════════════╝");
-                System.out.print("  ? - Orientation ID to update: ");
+                System.out.print("  ? - ID de guidage à mettre à jour: ");
                 int codigo_orientacao = leiaNum.nextInt();
                 
-                String sql = "select * from orientacoesEnglish where codigo_orientacaoEN = ?; ";
+                String sql = "select * from orientacoesFrances where codigo_orientacaoFR = ?; ";
                 PreparedStatement pstmt = conn.prepareStatement(sql);
                 pstmt.setInt(1, codigo_orientacao);
                 ResultSet rs = pstmt.executeQuery();
                 
                 if (rs.next()) {
                 	
-                	String tituloAtual = rs.getString("titulo_orientacaoEN");
-                    String conteudoAtual = rs.getString("conteudo_orientacaoEN");
+                	String tituloAtual = rs.getString("titulo_orientacaoFR");
+                    String conteudoAtual = rs.getString("conteudo_orientacaoFR");
                     
                 	encontrado = true;
                 	System.out.println("\n╔══════════════════════════════════════════╗");
-                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
-                    System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
-                    System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
+                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoFR"), rs.getString("titulo_orientacaoFR"));
+                    System.out.println("   Taper: " + rs.getString("tipo_orientacaoFR") );
+                    System.out.println("   Contenu: " + rs.getString("conteudo_orientacaoFR"));
                     System.out.println("╚══════════════════════════════════════════╝\n");
                     
-                    System.out.print("  ? - New title (press Enter to keep current): ");
+                    System.out.print("  ? - Nouveau titre (appuyez sur Entrée pour conserver la mise à jour) : ");
                     titulo_orientacao = leiaStr.nextLine();
                     if (titulo_orientacao.trim().isEmpty()) {
                     	titulo_orientacao = tituloAtual;
                     }
 
-                    System.out.print("  ? - New content (press Enter to keep current): ");
+                    System.out.print("  ? - Nouveau titre (appuyez sur Entrée pour conserver la mise à jour) : ");
                     conteudo_orientacao = leiaStr.nextLine();
                     if (conteudo_orientacao.trim().isEmpty()) {
                     	conteudo_orientacao = conteudoAtual;
@@ -310,11 +303,11 @@ public class English{
                 }
                 if(encontrado != true) {
                 	System.out.println("\n╔═════════════════════════════════════╗");
-    	            System.out.println("║        NO ORIENTATION FOUND         ║");
+    	            System.out.println("║    AUCUNE ORIENTATION TROUVÉE       ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }else {
 
-                String sql2 = "UPDATE orientacoesEnglish SET titulo_orientacaoEN = ?, conteudo_orientacaoEN = ? WHERE codigo_orientacaoEN = ?";
+                String sql2 = "UPDATE orientacoesFrances SET titulo_orientacaoFR = ?, conteudo_orientacaoFR = ? WHERE codigo_orientacaoFR = ?";
                 PreparedStatement stmt = conn.prepareStatement(sql2);
                 stmt.setString(1, titulo_orientacao);
                 stmt.setString(2, conteudo_orientacao);
@@ -325,11 +318,11 @@ public class English{
 
                 if (linhasAfetadas > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
-    	            System.out.println("║    UPDATE COMPLETED SUCCESSFULLY    ║");
+    	            System.out.println("║  MISE À JOUR TERMINÉE AVEC SUCCÈS   ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }else {
                 	System.out.println("\n╔═════════════════════════════════════╗");
-    	            System.out.println("║             ID NOT FOUND            ║");
+    	            System.out.println("║             ID NON TROUVÉ           ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }
              }
@@ -344,17 +337,17 @@ public class English{
 //-------------------------------------------------------------------------------------------------------------
     	    		
     	    			
-    	    	public static void deletar_orientação_english(Scanner leiaNum){
+    	    	public static void deletar_orientação_Francais(Scanner leiaNum){
     	    		try (Connection conn = Conexao.getConexao()) {
     	    			boolean encontrado = false;
     	    			
     	    			System.out.println("\n╔═════════════════════════════════════╗");
-    	                System.out.println("║         REMOVE ORIENTATION          ║");
+    	                System.out.println("║        SUPPRIMER LE GUIDAGE         ║");
     	                System.out.println("╚═════════════════════════════════════╝");
-    	                System.out.print("  ? - Orientation ID to remove: ");
+    	                System.out.print("  ? - ID de guidage à supprimer: ");
     	                int codigo_orientacao = leiaNum.nextInt();   
     	                
-    	                String sql = "select * from orientacoesEnglish where codigo_orientacaoEN = ?; ";
+    	                String sql = "select * from orientacoesFrances where codigo_orientacaoFR = ?; ";
     	                PreparedStatement pstmt = conn.prepareStatement(sql);
     	                pstmt.setInt(1, codigo_orientacao);
     	                ResultSet rs = pstmt.executeQuery();
@@ -364,20 +357,20 @@ public class English{
     	                	encontrado = true;
     	                	Thread.sleep(300);
     	                	System.out.println("\n╔══════════════════════════════════════════╗");
-    	                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoEN"), rs.getString("titulo_orientacaoEN"));
-    	                    System.out.println("   Type: " + rs.getString("tipo_orientacaoEN") );
-    	                    System.out.println("   Content: " + rs.getString("conteudo_orientacaoEN"));
+    	                    System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoFR"), rs.getString("titulo_orientacaoFR"));
+    	                    System.out.println("   Taper: " + rs.getString("tipo_orientacaoFR") );
+    	                    System.out.println("   Contenu: " + rs.getString("conteudo_orientacaoFR"));
     	                    System.out.println("╚══════════════════════════════════════════╝\n");
     	                    Thread.sleep(300);
     	                }
     	                if(encontrado != true) {
     	                	System.out.println("\n╔═════════════════════════════════════╗");
-    	    	            System.out.println("║        NO ORIENTATION FOUND         ║");
+    	    	            System.out.println("║    AUCUNE ORIENTATION TROUVÉE       ║");
     	    	            System.out.println("╚═════════════════════════════════════╝\n");
     	    	            Thread.sleep(300);
     	                }else {
 
-    	                String sql2 = "DELETE FROM orientacoesEnglish WHERE codigo_orientacaoEN = ?";
+    	                String sql2 = "DELETE FROM orientacoesFrances  WHERE codigo_orientacaoFR = ?";
     	                PreparedStatement stmt = conn.prepareStatement(sql2);
     	                stmt.setInt(1, codigo_orientacao);
     	                int linhasAfetadas = stmt.executeUpdate();
@@ -386,12 +379,12 @@ public class English{
 
     	                if (linhasAfetadas > 0) {
     	                    System.out.println("╔═════════════════════════════════════╗");
-    	    	            System.out.println("║    REMOVAL SUCCESSFULLY COMPLETED   ║");
+    	    	            System.out.println("║    RETRAIT TERMINÉ AVEC SUCCÈS      ║");
     	    	            System.out.println("╚═════════════════════════════════════╝\n");
     	    	            Thread.sleep(300);
     	                }else {
     	                	System.out.println("\n╔═════════════════════════════════════╗");
-    	    	            System.out.println("║            ID NOT FOUND             ║");
+    	    	            System.out.println("║            ID NON TROUVÉ            ║");
     	    	            System.out.println("╚═════════════════════════════════════╝\n");
     	                }
     	             }
@@ -405,14 +398,14 @@ public class English{
 //-------------------------------------------------------------------------------------------------------------
 
     	    	
-    	    	public static void mensagem_sair_sistema_english() {
+    	    	public static void mensagem_sair_sistema_Francais() {
     	    		try (Connection conn = Conexao.getConexao()) {
     	    			Thread.sleep(300);
     	    			System.out.println("\n╔═════════════════════════════════════╗");
     	    			Thread.sleep(300);
-	    	            System.out.println("     🌐  WEGONE SYSTEM CLOSED!  🌐    ");
+	    	            System.out.println("    🌐 SYSTÈME WEGONE FERMÉ ! 🌐   ");
 	    	            Thread.sleep(300);
-	    	            System.out.println("        ✨ COME BACK ANYTIME ✨       ");
+	    	            System.out.println("           ✨ REVENEZ À TOUT MOMENT ✨         ");
 	    	            Thread.sleep(300);
 	    	            System.out.println("╚═════════════════════════════════════╝\n");
 

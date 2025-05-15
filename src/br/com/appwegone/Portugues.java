@@ -99,13 +99,13 @@ public class Portugues {
             
             System.out.println("");
             while (rs.next()) {
-            	 encontrado = true;
-            	 System.out.println("╔══════════════════════════════════════════╗");
-                 System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoPT"), rs.getString("titulo_orientacaoPT"));
-                 System.out.println("   Tipo: " + rs.getString("tipo_orientacaoPT") );
-                 System.out.println("   Conteúdo: " + rs.getString("conteudo_orientacaoPT"));
-                 System.out.println("╚══════════════════════════════════════════╝");
-                 Thread.sleep(350);            
+            	encontrado = true;
+            	System.out.println("╔══════════════════════════════════════════╗");
+                System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoPT"), rs.getString("titulo_orientacaoPT"));
+                System.out.println("   Tipo: " + rs.getString("tipo_orientacaoPT") );
+                System.out.println("   Conteúdo: " + rs.getString("conteudo_orientacaoPT"));
+                System.out.println("╚══════════════════════════════════════════╝");
+                Thread.sleep(350);            
             }
             if(encontrado == true) {
             	System.out.println("");
