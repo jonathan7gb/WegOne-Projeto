@@ -16,6 +16,7 @@ public class Usuarios {
             String usuario = leiaStr.nextLine();
             System.out.print("  ? - Senha: ");
             String senha = leiaStr.nextLine();
+            Thread.sleep(300);
 
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
@@ -28,6 +29,7 @@ public class Usuarios {
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║    NOME DE USUÁRIO JÁ CADASTRADO!   ║");
                     System.out.println("╚═════════════════════════════════════╝\n");
+                    Usuarios.menu_login_pt();
                 }else{
                     String sql2 = "INSERT INTO usuarios (nome_usuario, senha_usuario) VALUES (?, ?)";
 	                PreparedStatement stmt = conn.prepareStatement(sql2);
@@ -38,6 +40,7 @@ public class Usuarios {
                     System.out.println("\n╔═════════════════════════════════════╗");
 		            System.out.println("║    USUÁRIO CADASTRADO COM SUCESSO   ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
+                    Usuarios.menu_login_pt();
                 }
 
         } catch (Exception e) {
@@ -49,27 +52,32 @@ public class Usuarios {
         try (Connection conn = Conexao.getConexao()) {
         Scanner leiaNum = new Scanner(System.in);
         Scanner leiaStr = new Scanner(System.in);
-
-        System.out.println("\n╔═════════════════════════════════════╗");
+            Thread.sleep(300);
+            System.out.println("\n╔═════════════════════════════════════╗");
             System.out.println("║       REALIZAR LOGIN WEGONE         ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
             System.out.println(" 1 - Fazer Cadastro");
             System.out.println("═══════════════════════════════════════");
+            Thread.sleep(300);
             System.out.print("  ? - Escolha: ");
             int escolha_menu_login = leiaNum.nextInt();
 
             switch(escolha_menu_login) {
                 case 1:
+                    Thread.sleep(300);
                     Usuarios.fazer_login_pt(leiaStr);
                     break;
                 case 2:
+                    Thread.sleep(300);
                     Usuarios.cadastrar_usuario_pt(leiaStr);
                     break;
                 default:
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║          ESCOLHA INVÁLIDA           ║");
-                    System.out.println("╚═════════════════════════════════════╝\n");
+                    System.out.println("╚═════════════════════════════════════╝");
+                    Usuarios.menu_login_pt();
                     break;
             }
 
@@ -99,11 +107,13 @@ public class Usuarios {
                 if (quantidade == 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
+                    System.out.println("╚═════════════════════════════════════╝");
+                    Usuarios.menu_login_pt();
+               }else{
+                    System.out.println("\n╔═════════════════════════════════════╗");
+                    System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
+                    System.out.println("          Usuário: "+usuario+" ");
                     System.out.println("╚═════════════════════════════════════╝\n");
-                }else{
-                    System.out.println("\n╔═══════════════════════════════════════╗");
-                    System.out.println("    LOGADO! BEM-VINDO AO WEGONE "+usuario);
-                    System.out.println("╚═══════════════════════════════════════╝\n");
                 }
 
         } catch (Exception e) {
