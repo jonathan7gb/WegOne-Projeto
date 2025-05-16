@@ -138,3 +138,17 @@ select * from orientacoesFrances where codigo_orientacaoFR = 1;
 update orientacoesFrances 
 set conteudo_orientacaoFR = 'aaa' 
 where codigo_orientacaoFR = 1;
+
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table usuarios(
+	id_usuario int auto_increment primary key,
+    nome_usuario longtext not null,
+    senha_usuario longtext not null
+);
+
+-- INSERE UMA NOVA ORIENTACAO NA TABELA
+insert into usuarios(nome_usuario, senha_usuario)
+values('admin', 'admin'), ('usuario', 'usuario');
+
+select * from usuarios;
