@@ -55,7 +55,7 @@ public class Usuarios {
         Scanner leiaStr = new Scanner(System.in);
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║       REALIZAR LOGIN WEGONE         ║");
+            System.out.println("║         LOGIN SISTEMA WEGONE        ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
             System.out.println(" 1 - Fazer Cadastro");
@@ -176,7 +176,7 @@ public class Usuarios {
         Scanner leiaStr = new Scanner(System.in);
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║       REALIZAR LOGIN WEGONE         ║");
+            System.out.println("║         LOGIN WEGONE SYSTEM         ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
             System.out.println(" 1 - Fazer Cadastro");
@@ -297,7 +297,7 @@ public class Usuarios {
         Scanner leiaStr = new Scanner(System.in);
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║       REALIZAR LOGIN WEGONE         ║");
+            System.out.println("║         WEGONE SYSTEM-LOGIN         ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
             System.out.println(" 1 - Fazer Cadastro");
@@ -418,7 +418,7 @@ public class Usuarios {
         Scanner leiaStr = new Scanner(System.in);
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║       REALIZAR LOGIN WEGONE         ║");
+            System.out.println("║     CONNEXION AU SYSTÈME WEGONE     ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
             System.out.println(" 1 - Fazer Cadastro");
@@ -539,7 +539,7 @@ public class Usuarios {
         Scanner leiaStr = new Scanner(System.in);
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║       REALIZAR LOGIN WEGONE         ║");
+            System.out.println("║ INICIO DE SESIÓN DEL SISTEMA WEGONE ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
             System.out.println(" 1 - Fazer Cadastro");
