@@ -28,9 +28,9 @@ public class MainWO {
 			System.out.println("");
 	        
 			switch(escolhaIdioma) {
-				case 1: //Portugues
+				case 1: 
+				Usuarios.menu_login_pt();
 			        do {
-			        	
 			        	System.out.println("╔═════════════════════════════════════╗");
 			            System.out.println("║            SISTEMA WEGONE           ║");
 			            System.out.println("╚═════════════════════════════════════╝");
@@ -179,7 +179,7 @@ public class MainWO {
 			
 				case 2: //English
 					do {
-			        	
+			        	Usuarios.menu_login_en();
 			        	System.out.println("╔═════════════════════════════════════╗");
 			            System.out.println("║            WEGONE SYSTEM            ║");
 			            System.out.println("╚═════════════════════════════════════╝");
@@ -333,6 +333,7 @@ public class MainWO {
 			
 				case 3: //Deutsch
 					do {	
+						Usuarios.menu_login_al();
 			        	System.out.println("╔═════════════════════════════════════╗");
 			            System.out.println("║            WEGONE-SYSTEM            ║");
 			            System.out.println("╚═════════════════════════════════════╝");
@@ -485,6 +486,7 @@ public class MainWO {
 			
 				case 4: //Français
 				do {	
+						Usuarios.menu_login_fr();
 			        	System.out.println("╔═════════════════════════════════════╗");
 			            System.out.println("║            SYSTÈME WEGONE           ║");
 			            System.out.println("╚═════════════════════════════════════╝");

@@ -58,10 +58,10 @@ public class Usuarios {
             System.out.println("║         LOGIN SISTEMA WEGONE        ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
-            System.out.println(" 1 - Fazer Cadastro");
+            System.out.println(" 2 - Fazer Cadastro");
             System.out.println("═══════════════════════════════════════");
             Thread.sleep(300);
-            System.out.print("  ? - Escolha: ");
+            System.out.print(" ? - Escolha: ");
             int escolha_menu_login = leiaNum.nextInt();
 
             switch(escolha_menu_login) {
@@ -89,6 +89,7 @@ public class Usuarios {
 
     public static void fazer_login_pt(Scanner leiaStr){
         try (Connection conn = Conexao.getConexao()) {
+            Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
             System.out.println("║         FAZER LOGIN WEGONE          ║");
             System.out.println("╚═════════════════════════════════════╝");
@@ -96,6 +97,7 @@ public class Usuarios {
             String usuario = leiaStr.nextLine();
             System.out.print("  ? - Senha: ");
             String senha = leiaStr.nextLine();
+            Thread.sleep(300);
 
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ? and senha_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
@@ -106,15 +108,19 @@ public class Usuarios {
                 int quantidade = rs.getInt(1);
                 
                 if (quantidade == 0) {
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
                     System.out.println("╚═════════════════════════════════════╝");
+                    Thread.sleep(300);
                     Usuarios.menu_login_pt();
                }else{
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
                     System.out.println("          Usuário: "+usuario+" ");
                     System.out.println("╚═════════════════════════════════════╝\n");
+                    Thread.sleep(300);
                 }
 
         } catch (Exception e) {
@@ -179,10 +185,10 @@ public class Usuarios {
             System.out.println("║         LOGIN WEGONE SYSTEM         ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
-            System.out.println(" 1 - Fazer Cadastro");
+            System.out.println(" 2 - Fazer Cadastro");
             System.out.println("═══════════════════════════════════════");
             Thread.sleep(300);
-            System.out.print("  ? - Escolha: ");
+            System.out.print(" ? - Escolha: ");
             int escolha_menu_login = leiaNum.nextInt();
 
             switch(escolha_menu_login) {
@@ -210,6 +216,7 @@ public class Usuarios {
 
     public static void fazer_login_en(Scanner leiaStr){
         try (Connection conn = Conexao.getConexao()) {
+            Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
             System.out.println("║         FAZER LOGIN WEGONE          ║");
             System.out.println("╚═════════════════════════════════════╝");
@@ -217,6 +224,7 @@ public class Usuarios {
             String usuario = leiaStr.nextLine();
             System.out.print("  ? - Senha: ");
             String senha = leiaStr.nextLine();
+            Thread.sleep(300);
 
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ? and senha_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
@@ -227,15 +235,19 @@ public class Usuarios {
                 int quantidade = rs.getInt(1);
                 
                 if (quantidade == 0) {
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
                     System.out.println("╚═════════════════════════════════════╝");
+                    Thread.sleep(300);
                     Usuarios.menu_login_en();
                }else{
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
                     System.out.println("          Usuário: "+usuario+" ");
                     System.out.println("╚═════════════════════════════════════╝\n");
+                    Thread.sleep(300);
                 }
 
         } catch (Exception e) {
@@ -300,10 +312,10 @@ public class Usuarios {
             System.out.println("║         WEGONE SYSTEM-LOGIN         ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
-            System.out.println(" 1 - Fazer Cadastro");
+            System.out.println(" 2 - Fazer Cadastro");
             System.out.println("═══════════════════════════════════════");
             Thread.sleep(300);
-            System.out.print("  ? - Escolha: ");
+            System.out.print(" ? - Escolha: ");
             int escolha_menu_login = leiaNum.nextInt();
 
             switch(escolha_menu_login) {
@@ -331,6 +343,7 @@ public class Usuarios {
 
     public static void fazer_login_al(Scanner leiaStr){
         try (Connection conn = Conexao.getConexao()) {
+            Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
             System.out.println("║         FAZER LOGIN WEGONE          ║");
             System.out.println("╚═════════════════════════════════════╝");
@@ -338,6 +351,7 @@ public class Usuarios {
             String usuario = leiaStr.nextLine();
             System.out.print("  ? - Senha: ");
             String senha = leiaStr.nextLine();
+            Thread.sleep(300);
 
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ? and senha_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
@@ -348,15 +362,19 @@ public class Usuarios {
                 int quantidade = rs.getInt(1);
                 
                 if (quantidade == 0) {
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
                     System.out.println("╚═════════════════════════════════════╝");
+                    Thread.sleep(300);
                     Usuarios.menu_login_al();
                }else{
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
                     System.out.println("          Usuário: "+usuario+" ");
                     System.out.println("╚═════════════════════════════════════╝\n");
+                    Thread.sleep(300);
                 }
 
         } catch (Exception e) {
@@ -421,10 +439,10 @@ public class Usuarios {
             System.out.println("║     CONNEXION AU SYSTÈME WEGONE     ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
-            System.out.println(" 1 - Fazer Cadastro");
+            System.out.println(" 2 - Fazer Cadastro");
             System.out.println("═══════════════════════════════════════");
             Thread.sleep(300);
-            System.out.print("  ? - Escolha: ");
+            System.out.print(" ? - Escolha: ");
             int escolha_menu_login = leiaNum.nextInt();
 
             switch(escolha_menu_login) {
@@ -452,6 +470,7 @@ public class Usuarios {
 
     public static void fazer_login_fr(Scanner leiaStr){
         try (Connection conn = Conexao.getConexao()) {
+            Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
             System.out.println("║         FAZER LOGIN WEGONE          ║");
             System.out.println("╚═════════════════════════════════════╝");
@@ -459,6 +478,7 @@ public class Usuarios {
             String usuario = leiaStr.nextLine();
             System.out.print("  ? - Senha: ");
             String senha = leiaStr.nextLine();
+            Thread.sleep(300);
 
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ? and senha_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
@@ -469,15 +489,18 @@ public class Usuarios {
                 int quantidade = rs.getInt(1);
                 
                 if (quantidade == 0) {
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
                     System.out.println("╚═════════════════════════════════════╝");
+                    Thread.sleep(300);
                     Usuarios.menu_login_fr();
                }else{
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
                     System.out.println("          Usuário: "+usuario+" ");
                     System.out.println("╚═════════════════════════════════════╝\n");
+                    Thread.sleep(300);
                 }
 
         } catch (Exception e) {
@@ -542,10 +565,10 @@ public class Usuarios {
             System.out.println("║ INICIO DE SESIÓN DEL SISTEMA WEGONE ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.println(" 1 - Fazer Login");
-            System.out.println(" 1 - Fazer Cadastro");
+            System.out.println(" 2 - Fazer Cadastro");
             System.out.println("═══════════════════════════════════════");
             Thread.sleep(300);
-            System.out.print("  ? - Escolha: ");
+            System.out.print(" ? - Escolha: ");
             int escolha_menu_login = leiaNum.nextInt();
 
             switch(escolha_menu_login) {
@@ -573,6 +596,7 @@ public class Usuarios {
 
     public static void fazer_login_es(Scanner leiaStr){
         try (Connection conn = Conexao.getConexao()) {
+            Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
             System.out.println("║         FAZER LOGIN WEGONE          ║");
             System.out.println("╚═════════════════════════════════════╝");
@@ -580,6 +604,7 @@ public class Usuarios {
             String usuario = leiaStr.nextLine();
             System.out.print("  ? - Senha: ");
             String senha = leiaStr.nextLine();
+            Thread.sleep(300);
 
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ? and senha_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
@@ -590,15 +615,19 @@ public class Usuarios {
                 int quantidade = rs.getInt(1);
                 
                 if (quantidade == 0) {
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
                     System.out.println("╚═════════════════════════════════════╝");
+                    Thread.sleep(300);
                     Usuarios.menu_login_es();
                }else{
+                    Thread.sleep(300);
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
                     System.out.println("          Usuário: "+usuario+" ");
                     System.out.println("╚═════════════════════════════════════╝\n");
+                    Thread.sleep(300);
                 }
 
         } catch (Exception e) {
