@@ -405,7 +405,7 @@ public class Portugues {
     	    			Thread.sleep(300);
 	    	            System.out.println("    🌐 SISTEMA WEGONE ENCERRADO! 🌐   ");
 	    	            Thread.sleep(300);
-	    	            System.out.println("           ✨ VOLTE SEMPRE ✨         ");
+	    	            System.out.println("          ✨ VOLTE SEMPRE ✨         ");
 	    	            Thread.sleep(300);
 	    	            System.out.println("╚═════════════════════════════════════╝\n");
 
