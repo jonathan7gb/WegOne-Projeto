@@ -144,11 +144,12 @@ where codigo_orientacaoFR = 1;
 create table usuarios(
 	id_usuario int auto_increment primary key,
     nome_usuario longtext not null,
-    senha_usuario longtext not null
+    senha_usuario longtext not null,
+    tipo_usuario enum ('usuario', 'admin')
 );
 
 -- INSERE UMA NOVA ORIENTACAO NA TABELA
-insert into usuarios(nome_usuario, senha_usuario)
-values('admin', 'admin'), ('usuario', 'usuario');
+insert into usuarios(nome_usuario, senha_usuario, tipo_usuario)
+values('admin', 'admin', 'admin'), ('usuario', 'usuario', 'usuario');
 
 select * from usuarios;
