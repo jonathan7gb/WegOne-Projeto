@@ -577,7 +577,7 @@ public class MainWO {
 		break; // BREAK DO CASE 1 DO BLOCO switch(escolhaIdioma) Portugues
 			}else{
 				System.out.println("\n╔═════════════════════════════════════╗");
-				System.out.println("║           ERRO NO LOGIN             ║");
+				System.out.println("║            LOGIN ERROR              ║");
 				System.out.println("╚═════════════════════════════════════╝");
 			}
 			
@@ -861,7 +861,7 @@ public class MainWO {
 		break; // BREAK DO CASE 1 DO BLOCO switch(escolhaIdioma) Deutsch
 			}else{
 				System.out.println("\n╔═════════════════════════════════════╗");
-				System.out.println("║           ERRO NO LOGIN             ║");
+				System.out.println("║           ANMELDEFEHLER             ║");
 				System.out.println("╚═════════════════════════════════════╝");
 			}
 			
@@ -1007,7 +1007,7 @@ public class MainWO {
 						default:
 							System.out.println("\n╔═════════════════════════════════════╗");
 				            System.out.println("║           CHOIX INVALIDE            ║");
-				            System.out.println("╚═════════════════════════════════════╝");
+				            System.out.println("╚═════════════════════════════════════╝\n");
 							break; // BREAK DO DEFAULT DO BLOCO switch(escolhaMenu)
 							
 						}// Fechando chaves do bloco switch(escolhaMenu)
@@ -1105,8 +1105,8 @@ public class MainWO {
 									
 								default:
 									System.out.println("\n╔═════════════════════════════════════╗");
-									System.out.println("║          CHOIX INVALIDE           ║");
-									System.out.println("╚═════════════════════════════════════╝");
+									System.out.println("║           CHOIX INVALIDE            ║");
+									System.out.println("╚═════════════════════════════════════╝\n");
 									break; // BREAK DO DEFAULT DO BLOCO switch(escolhaBuscaEspecifica)
 									
 								}// Fechando chaves do bloco switch(escolhaBuscaEspecifica)
