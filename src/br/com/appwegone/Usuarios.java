@@ -289,7 +289,7 @@ public class Usuarios {
 
     //ALEMÃO
 
-    public static void cadastrar_usuario_AL(Scanner leiaStr){
+    public static void cadastrar_usuario_al(Scanner leiaStr){
         try (Connection conn = Conexao.getConexao()) {
         
             System.out.println("\n╔═════════════════════════════════════╗");
@@ -331,7 +331,7 @@ public class Usuarios {
         }
     }
 
-    public static String menu_login_AL() {
+    public static String menu_login_al() {
         try (Connection conn = Conexao.getConexao()) {
             Scanner leiaNum = new Scanner(System.in);
             Scanner leiaStr = new Scanner(System.in);
@@ -351,7 +351,7 @@ public class Usuarios {
                 switch (escolha_menu_login) {
                     case 1:
                         Thread.sleep(300);
-                        String tipoUsuario = Usuarios.fazer_login_AL(leiaStr);
+                        String tipoUsuario = Usuarios.fazer_login_al(leiaStr);
                         if (tipoUsuario.equals("invalido") || tipoUsuario.equals("erro")) {
                             break;
                         } else {
@@ -360,7 +360,7 @@ public class Usuarios {
     
                     case 2:
                         Thread.sleep(300);
-                        Usuarios.cadastrar_usuario_AL(leiaStr);
+                        Usuarios.cadastrar_usuario_al(leiaStr);
                         break;
     
                     default:
@@ -378,7 +378,7 @@ public class Usuarios {
         }
     }
 
-    public static String fazer_login_AL(Scanner leiaStr){
+    public static String fazer_login_al(Scanner leiaStr){
         try (Connection conn = Conexao.getConexao()) {
 
             String usuario = "";

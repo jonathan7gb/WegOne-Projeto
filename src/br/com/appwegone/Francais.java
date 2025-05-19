@@ -90,7 +90,7 @@ public class Francais {
 //-------------------------------------------------------------------------------------------------------------
 	
 	
-    public static void listar_todas_orientacoes_Francais(){
+    public static void listar_todas_orientacoes_francais(){
     	try (Connection conn = Conexao.getConexao()) {
     		boolean encontrado = false;
             String sql = "SELECT * FROM orientacoesFrances";
@@ -124,7 +124,7 @@ public class Francais {
 //-------------------------------------------------------------------------------------------------------------
   	
   	
-    public static void listar_orientacoes_Francais_pelo_tipo(int tipoOrientacao) {
+    public static void listar_orientacoes_francais_pelo_tipo(int tipoOrientacao) {
     	boolean encontrado = false;
     	try (Connection conn = Conexao.getConexao()) {
             String sql = "SELECT * FROM orientacoesFrances where tipo_orientacaoFR = ?";
@@ -185,7 +185,7 @@ public class Francais {
 //-------------------------------------------------------------------------------------------------------------
   	
   	
-    	public static void listar_orientacao_pelo_codigo_Francais(int Codigo_orientacao){
+    	public static void listar_orientacao_pelo_codigo_francais(int Codigo_orientacao){
         	try (Connection conn = Conexao.getConexao()) {
         		boolean encontrado = false;
                 String sql = "select * from orientacoesFrances where codigo_orientacaoFR = ?; ";
@@ -221,7 +221,7 @@ public class Francais {
 //-------------------------------------------------------------------------------------------------------------
     		
     		
-    	public static void listar_orientacao_pelo_titulo_Francais(String titulo_orientacao){
+    	public static void listar_orientacao_pelo_titulo_francais(String titulo_orientacao){
         	try (Connection conn = Conexao.getConexao()) {
         		boolean encontrado = false;
                 String sql = "select * from orientacoesFrances where titulo_orientacaoFR = ?; ";
@@ -258,7 +258,7 @@ public class Francais {
 //-------------------------------------------------------------------------------------------------------------
     		
     			
-    	public static void editar_orientaçao_titulo_pelo_id_Francais(Scanner leiaNum, Scanner leiaStr){
+    	public static void editar_orientaçao_titulo_pelo_id_francais(Scanner leiaNum, Scanner leiaStr){
     		try (Connection conn = Conexao.getConexao()) {
     			boolean encontrado = false;
     			
@@ -337,7 +337,7 @@ public class Francais {
 //-------------------------------------------------------------------------------------------------------------
     	    		
     	    			
-    	    	public static void deletar_orientação_Francais(Scanner leiaNum){
+    	    	public static void deletar_orientação_francais(Scanner leiaNum){
     	    		try (Connection conn = Conexao.getConexao()) {
     	    			boolean encontrado = false;
     	    			
@@ -398,7 +398,7 @@ public class Francais {
 //-------------------------------------------------------------------------------------------------------------
 
     	    	
-    	    	public static void mensagem_sair_sistema_Francais() {
+    	    	public static void mensagem_sair_sistema_francais() {
     	    		try (Connection conn = Conexao.getConexao()) {
     	    			Thread.sleep(300);
     	    			System.out.println("\n╔═════════════════════════════════════╗");
@@ -413,12 +413,5 @@ public class Francais {
     	                e.printStackTrace();
     	            }
     	    	}
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+
 }

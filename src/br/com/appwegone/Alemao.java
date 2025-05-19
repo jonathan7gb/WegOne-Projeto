@@ -90,7 +90,7 @@ public class Alemao {
 //-------------------------------------------------------------------------------------------------------------
 	
 	
-    public static void listar_todas_orientacoes_Alemao(){
+    public static void listar_todas_orientacoes_alemao(){
     	try (Connection conn = Conexao.getConexao()) {
     		boolean encontrado = false;
             String sql = "SELECT * FROM orientacoesAlemao";
@@ -124,7 +124,7 @@ public class Alemao {
 //-------------------------------------------------------------------------------------------------------------
   	
   	
-    public static void listar_orientacoes_Alemao_pelo_tipo(int tipoOrientacao) {
+    public static void listar_orientacoes_alemao_pelo_tipo(int tipoOrientacao) {
     	boolean encontrado = false;
     	try (Connection conn = Conexao.getConexao()) {
             String sql = "SELECT * FROM orientacoesAlemao where tipo_orientacaoAL = ?";
@@ -185,7 +185,7 @@ public class Alemao {
 //-------------------------------------------------------------------------------------------------------------
   	
   	
-    	public static void listar_orientacao_pelo_codigo_Alemao(int Codigo_orientacao){
+    	public static void listar_orientacao_pelo_codigo_alemao(int Codigo_orientacao){
         	try (Connection conn = Conexao.getConexao()) {
         		boolean encontrado = false;
                 String sql = "select * from orientacoesAlemao where codigo_orientacaoAL = ?; ";
@@ -221,7 +221,7 @@ public class Alemao {
 //-------------------------------------------------------------------------------------------------------------
     		
     		
-    	public static void listar_orientacao_pelo_titulo_Alemao(String titulo_orientacao){
+    	public static void listar_orientacao_pelo_titulo_alemao(String titulo_orientacao){
         	try (Connection conn = Conexao.getConexao()) {
         		boolean encontrado = false;
                 String sql = "select * from orientacoesAlemao where titulo_orientacaoAL = ?; ";
@@ -258,7 +258,7 @@ public class Alemao {
 //-------------------------------------------------------------------------------------------------------------
     		
     			
-    	public static void editar_orientaçao_titulo_pelo_id_Alemao(Scanner leiaNum, Scanner leiaStr){
+    	public static void editar_orientaçao_titulo_pelo_id_alemao(Scanner leiaNum, Scanner leiaStr){
     		try (Connection conn = Conexao.getConexao()) {
     			boolean encontrado = false;
     			
@@ -337,7 +337,7 @@ public class Alemao {
 //-------------------------------------------------------------------------------------------------------------
     	    		
     	    			
-    	    	public static void deletar_orientação_Alemao(Scanner leiaNum){
+    	    	public static void deletar_orientação_alemao(Scanner leiaNum){
     	    		try (Connection conn = Conexao.getConexao()) {
     	    			boolean encontrado = false;
     	    			
@@ -398,14 +398,14 @@ public class Alemao {
 //-------------------------------------------------------------------------------------------------------------
 
     	    	
-    	    	public static void mensagem_sair_sistema_Alemao() {
+    	    	public static void mensagem_sair_sistema_alemao() {
     	    		try (Connection conn = Conexao.getConexao()) {
     	    			Thread.sleep(300);
     	    			System.out.println("\n╔═════════════════════════════════════╗");
     	    			Thread.sleep(300);
 	    	            System.out.println("    🌐 SYSTEM WEGONE GESCHLOSSEN! 🌐   ");
 	    	            Thread.sleep(300);
-	    	            System.out.println("    ✨ KOMMEN SIE JEDERZEIT WIEDER ✨         ");
+	    	            System.out.println("   ✨ KOMMEN SIE JEDERZEIT WIEDER ✨         ");
 	    	            Thread.sleep(300);
 	    	            System.out.println("╚═════════════════════════════════════╝\n");
 
@@ -413,12 +413,5 @@ public class Alemao {
     	                e.printStackTrace();
     	            }
     	    	}
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+   	
 }
