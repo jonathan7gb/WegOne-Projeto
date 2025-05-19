@@ -1304,6 +1304,7 @@ public class MainWO {
 			        System.out.println("  1 - 🔍 Search for Orientation        ");
 			        System.out.println("  2 - 👋 Leave System                        ");
 			        System.out.println("═══════════════════════════════════════");
+					System.out.print("  ? - Your choice: ");
 					escolhaMenu = leiaNum.nextInt(); //Escolha do usuário no menu
 					
 					switch(escolhaMenu) { //MENU PRINCIPAL 
