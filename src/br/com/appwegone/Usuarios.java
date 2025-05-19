@@ -152,11 +152,11 @@ public class Usuarios {
         try (Connection conn = Conexao.getConexao()) {
         
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║          CADASTRAR USUÁRIO          ║");
+            System.out.println("║            REGISTER USER            ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("  ? - Usuário: ");
+            System.out.print("  ? - User: ");
             String usuario = leiaStr.nextLine();
-            System.out.print("  ? - Senha: ");
+            System.out.print("  ? - Password: ");
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
@@ -169,7 +169,7 @@ public class Usuarios {
                 
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║    NOME DE USUÁRIO JÁ CADASTRADO!   ║");
+                    System.out.println("║    USERNAME ALREADY REGISTERED!     ║");
                     System.out.println("╚═════════════════════════════════════╝\n");
                 }else{
                     String tipo_user = "usuario";
@@ -181,7 +181,7 @@ public class Usuarios {
 
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
-		            System.out.println("║    USUÁRIO CADASTRADO COM SUCESSO   ║");
+		            System.out.println("║    USER REGISTERED SUCCESSFULLY     ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
 
@@ -198,20 +198,20 @@ public class Usuarios {
             while (true) {
                 Thread.sleep(300);
                 System.out.println("\n╔═════════════════════════════════════╗");
-                System.out.println("║         LOGIN SISTEMA WEGONE        ║");
+                System.out.println("║         LOGIN SYSTEM WEGONE         ║");
                 System.out.println("╚═════════════════════════════════════╝");
-                System.out.println(" 1 - Fazer Login");
-                System.out.println(" 2 - Fazer Cadastro");
+                System.out.println(" 1 - Login");
+                System.out.println(" 2 - Register: ");
                 System.out.println("═══════════════════════════════════════");
                 Thread.sleep(300);
-                System.out.print(" ? - Escolha: ");
+                System.out.print(" ? - Choice: ");
                 int escolha_menu_login = leiaNum.nextInt();
     
                 switch (escolha_menu_login) {
                     case 1:
                         Thread.sleep(300);
                         String tipoUsuario = Usuarios.fazer_login_en(leiaStr);
-                        if (tipoUsuario.equals("invalido") || tipoUsuario.equals("erro")) {
+                        if (tipoUsuario.equals("invalid") || tipoUsuario.equals("erro")) {
                             break;
                         } else {
                             return tipoUsuario;
@@ -225,7 +225,7 @@ public class Usuarios {
                     default:
                         Thread.sleep(300);
                         System.out.println("\n╔═════════════════════════════════════╗");
-                        System.out.println("║          ESCOLHA INVÁLIDA           ║");
+                        System.out.println("║            INVALID CHOICE           ║");
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
@@ -233,7 +233,7 @@ public class Usuarios {
     
         } catch (Exception e) {
             e.printStackTrace();
-            return "erro";
+            return "Error";
         }
     }
 
@@ -245,11 +245,11 @@ public class Usuarios {
 
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║         FAZER LOGIN WEGONE          ║");
+            System.out.println("║            LOGIN WEGONE             ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("  ? - Usuário: ");
+            System.out.print("  ? - User: ");
             usuario = leiaStr.nextLine();
-            System.out.print("  ? - Senha: ");
+            System.out.print("  ? - Password: ");
             senha = leiaStr.nextLine();
             Thread.sleep(300);
            
@@ -263,15 +263,15 @@ public class Usuarios {
                     String tipo = rs.getString("tipo_usuario");
         
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
-                    System.out.println("          Usuário: " + usuario + " ");
+                    System.out.println("     LOGGED IN! WELCOME TO WEGONE ");
+                    System.out.println("          User: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
         
                     return tipo;
                 } else {
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
+                    System.out.println("║      INVALID USER OR PASSWORD !     ║");
                     System.out.println("╚═════════════════════════════════════╝");
                     Thread.sleep(300);
                     return "invalido";
@@ -279,7 +279,7 @@ public class Usuarios {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return "erro";
+            return "Error";
         }
     }
 
@@ -293,11 +293,11 @@ public class Usuarios {
         try (Connection conn = Conexao.getConexao()) {
         
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║          CADASTRAR USUÁRIO          ║");
+            System.out.println("║        BENUTZER REGISTRIEREN        ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("  ? - Usuário: ");
+            System.out.print("  ? - Benutzer: ");
             String usuario = leiaStr.nextLine();
-            System.out.print("  ? - Senha: ");
+            System.out.print("  ? - Passwort: ");
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
@@ -310,7 +310,7 @@ public class Usuarios {
                 
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║    NOME DE USUÁRIO JÁ CADASTRADO!   ║");
+                    System.out.println("║   BENUTZERNAME BEREITS REGISTRIERT! ║");
                     System.out.println("╚═════════════════════════════════════╝\n");
                 }else{
                     String tipo_user = "usuario";
@@ -322,7 +322,7 @@ public class Usuarios {
 
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
-		            System.out.println("║    USUÁRIO CADASTRADO COM SUCESSO   ║");
+		            System.out.println("║    BENUTZER ERFOLGREICH REGISTRIERT ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
 
@@ -366,7 +366,7 @@ public class Usuarios {
                     default:
                         Thread.sleep(300);
                         System.out.println("\n╔═════════════════════════════════════╗");
-                        System.out.println("║          ESCOLHA INVÁLIDA           ║");
+                        System.out.println("║          WÄHLEN SIE UNGÜLTIG        ║");
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
@@ -374,7 +374,7 @@ public class Usuarios {
     
         } catch (Exception e) {
             e.printStackTrace();
-            return "erro";
+            return "Fehler";
         }
     }
 
@@ -386,11 +386,11 @@ public class Usuarios {
 
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║         FAZER LOGIN WEGONE          ║");
+            System.out.println("║         BEI WEGONE ANMELDEN         ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("  ? - Usuário: ");
+            System.out.print("  ? - Benutzer: ");
             usuario = leiaStr.nextLine();
-            System.out.print("  ? - Senha: ");
+            System.out.print("  ? - Passwort: ");
             senha = leiaStr.nextLine();
             Thread.sleep(300);
            
@@ -404,23 +404,23 @@ public class Usuarios {
                     String tipo = rs.getString("tipo_usuario");
         
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
-                    System.out.println("          Usuário: " + usuario + " ");
+                    System.out.println("     ANGEMELDET! WILLKOMMEN BEI WEGONE ");
+                    System.out.println("          Benutzer: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
         
                     return tipo;
                 } else {
-                    System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
-                    System.out.println("╚═════════════════════════════════════╝");
+                    System.out.println("\n╔════════════════════════════════════════════════════════╗");
+                    System.out.println("║   UNGÜLTIGER BENUTZERNAME ODER UNGÜLTIGES PASSWORT!    ║");
+                    System.out.println("╚════════════════════════════════════════════════════════╝");
                     Thread.sleep(300);
-                    return "invalido";
+                    return "untultig";
                 }
 
         } catch (Exception e) {
             e.printStackTrace();
-            return "erro";
+            return "Fehler";
         }
     }
 
