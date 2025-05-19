@@ -88,6 +88,8 @@ public class Usuarios {
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
+                leiaNum.close();
+                leiaStr.close();
             }
     
         } catch (Exception e) {
@@ -229,6 +231,8 @@ public class Usuarios {
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
+                leiaNum.close();
+                leiaStr.close();
             }
     
         } catch (Exception e) {
@@ -369,9 +373,11 @@ public class Usuarios {
                         System.out.println("║          WÄHLEN SIE UNGÜLTIG        ║");
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
-                }
+                    }
+                    leiaNum.close();
+                    leiaStr.close();
             }
-    
+            
         } catch (Exception e) {
             e.printStackTrace();
             return "Fehler";
@@ -510,7 +516,9 @@ public class Usuarios {
                         System.out.println("║           CHOIX INVALIDE            ║");
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
-                }
+                    }
+                    leiaNum.close();
+                    leiaStr.close();
             }
     
         } catch (Exception e) {
@@ -652,6 +660,8 @@ public class Usuarios {
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
+                leiaNum.close();
+                leiaStr.close();
             }
     
         } catch (Exception e) {
