@@ -88,8 +88,6 @@ public class Usuarios {
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
-                leiaNum.close();
-                leiaStr.close();
             }
     
         } catch (Exception e) {
@@ -213,7 +211,7 @@ public class Usuarios {
                     case 1:
                         Thread.sleep(300);
                         String tipoUsuario = Usuarios.fazer_login_en(leiaStr);
-                        if (tipoUsuario.equals("invalid") || tipoUsuario.equals("erro")) {
+                        if (tipoUsuario.equals("invalid") || tipoUsuario.equals("error")) {
                             break;
                         } else {
                             return tipoUsuario;
@@ -230,14 +228,12 @@ public class Usuarios {
                         System.out.println("║            INVALID CHOICE           ║");
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
-                }
-                leiaNum.close();
-                leiaStr.close();
+                }    
             }
     
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error";
+            return "error";
         }
     }
 
@@ -278,12 +274,12 @@ public class Usuarios {
                     System.out.println("║      INVALID USER OR PASSWORD !     ║");
                     System.out.println("╚═════════════════════════════════════╝");
                     Thread.sleep(300);
-                    return "invalido";
+                    return "invalid";
                 }
 
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error";
+            return "error";
         }
     }
 
@@ -343,20 +339,20 @@ public class Usuarios {
             while (true) {
                 Thread.sleep(300);
                 System.out.println("\n╔═════════════════════════════════════╗");
-                System.out.println("║         LOGIN SISTEMA WEGONE        ║");
+                System.out.println("║         WEGONE SYSTEM LOGIN         ║");
                 System.out.println("╚═════════════════════════════════════╝");
-                System.out.println(" 1 - Fazer Login");
-                System.out.println(" 2 - Fazer Cadastro");
+                System.out.println(" 1 - Login");
+                System.out.println(" 2 - Registrieren");
                 System.out.println("═══════════════════════════════════════");
                 Thread.sleep(300);
-                System.out.print(" ? - Escolha: ");
+                System.out.print(" ? - Wählen Sie: ");
                 int escolha_menu_login = leiaNum.nextInt();
     
                 switch (escolha_menu_login) {
                     case 1:
                         Thread.sleep(300);
                         String tipoUsuario = Usuarios.fazer_login_al(leiaStr);
-                        if (tipoUsuario.equals("invalido") || tipoUsuario.equals("erro")) {
+                        if (tipoUsuario.equals("untultig") || tipoUsuario.equals("Fehler")) {
                             break;
                         } else {
                             return tipoUsuario;
@@ -374,8 +370,6 @@ public class Usuarios {
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                     }
-                    leiaNum.close();
-                    leiaStr.close();
             }
             
         } catch (Exception e) {
@@ -392,7 +386,7 @@ public class Usuarios {
 
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║         BEI WEGONE ANMELDEN         ║");
+            System.out.println("║    BETRETEN SIE DAS WEGONE-SYSTEM   ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.print("  ? - Benutzer: ");
             usuario = leiaStr.nextLine();
@@ -517,8 +511,6 @@ public class Usuarios {
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                     }
-                    leiaNum.close();
-                    leiaStr.close();
             }
     
         } catch (Exception e) {
@@ -553,7 +545,7 @@ public class Usuarios {
                     String tipo = rs.getString("tipo_usuario");
         
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("      CONNECTÉ! BIENVENUE CHEZ WEGONE ");
+                    System.out.println("    CONNECTÉ! BIENVENUE CHEZ WEGONE ");
                     System.out.println("        Utilisateur: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
@@ -660,8 +652,6 @@ public class Usuarios {
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
-                leiaNum.close();
-                leiaStr.close();
             }
     
         } catch (Exception e) {

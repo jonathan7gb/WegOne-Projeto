@@ -403,9 +403,9 @@ public class Francais {
     	    			Thread.sleep(300);
     	    			System.out.println("\n╔═════════════════════════════════════╗");
     	    			Thread.sleep(300);
-	    	            System.out.println("     🌐 SYSTÈME WEGONE FERMÉ! 🌐   ");
+	    	            System.out.println("       🌐 SYSTÈME WEGONE FERMÉ! 🌐   ");
 	    	            Thread.sleep(300);
-	    	            System.out.println("     ✨ REVENEZ À TOUT MOMENT ✨         ");
+	    	            System.out.println("       ✨ REVENEZ À TOUT MOMENT ✨         ");
 	    	            Thread.sleep(300);
 	    	            System.out.println("╚═════════════════════════════════════╝\n");
 
