@@ -122,7 +122,7 @@ public class Usuarios {
                     String tipo = rs.getString("tipo_usuario");
         
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
+                    System.out.println("     LOGADO! BEM-VINDO AO WEGONE ");
                     System.out.println("          Usuário: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
@@ -404,7 +404,7 @@ public class Usuarios {
                     String tipo = rs.getString("tipo_usuario");
         
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("     ANGEMELDET! WILLKOMMEN BEI WEGONE ");
+                    System.out.println("   ANGEMELDET! WILLKOMMEN BEI WEGONE ");
                     System.out.println("          Benutzer: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
