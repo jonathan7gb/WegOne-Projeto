@@ -175,6 +175,6 @@ create table usuarios(
 
 -- INSERE UMA NOVA ORIENTACAO NA TABELA
 insert into usuarios(nome_usuario, senha_usuario, tipo_usuario)
-values('admin', 'admin123', 'admin'), ('usuario', 'usuario123', 'usuario'), ('jonathan', 'jonathan123', 'usuario');
+values('admin', 'admin123@', 'admin'), ('usuario', 'usuario123@', 'usuario'), ('jonathan', 'jonathan123@', 'usuario');
 
 select * from usuarios;

@@ -19,6 +19,11 @@ public class Usuarios {
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
+            if(senha.length() >= 8 &&
+            senha.matches(".*[a-zA-Z].*") &&
+            senha.matches(".*[0-9].*") &&
+            senha.matches(".*[!@$#%*.].*")){
+                
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
                 pstmt.setString(1, usuario);
@@ -43,6 +48,15 @@ public class Usuarios {
 		            System.out.println("║    USUÁRIO CADASTRADO COM SUCESSO   ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
+            }else{
+                System.out.println("\n╔═════════════════════════════════════╗");
+		        System.out.println("║ SENHA INVÁLIDA. SENHA DEVE POSSUIR: ║");
+		        System.out.println("║ - 8 CARACTERES OU MAIS              ║");
+		        System.out.println("║ - 1 LETRA NO MÍNIMO                 ║");
+		        System.out.println("║ - 1 NÚMERO NO MÍNIMO                ║");
+		        System.out.println("║ - 1 CARACTER ESPECIAL (!@$#%*.)     ║");
+		        System.out.println("╚═════════════════════════════════════╝\n");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,6 +174,11 @@ public class Usuarios {
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
+            if(senha.length() >= 8 &&
+            senha.matches(".*[a-zA-Z].*") &&
+            senha.matches(".*[0-9].*") &&
+            senha.matches(".*[!@$#%*.].*")){
+
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
                 pstmt.setString(1, usuario);
@@ -184,6 +203,15 @@ public class Usuarios {
 		            System.out.println("║    USER REGISTERED SUCCESSFULLY     ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
+            }else{
+                System.out.println("\n╔═══════════════════════════════════════╗");
+                System.out.println("║ INVALID PASSWORD. PASSWORD MUST HAVE: ║");
+                System.out.println("║ - 8 CHARACTERS OR MORE                ║");
+                System.out.println("║ - AT LEAST 1 LETTER                   ║"); 
+                System.out.println("║ - AT LEAST 1 NUMBER                   ║");
+                System.out.println("║ - 1 SPECIAL CHARACTER (!@$#%*.)       ║");
+                System.out.println("╚═══════════════════════════════════════╝\n");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -301,6 +329,11 @@ public class Usuarios {
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
+            if(senha.length() >= 8 &&
+            senha.matches(".*[a-zA-Z].*") &&
+            senha.matches(".*[0-9].*") &&
+            senha.matches(".*[!@$#%*.].*")){
+
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
                 pstmt.setString(1, usuario);
@@ -325,6 +358,16 @@ public class Usuarios {
 		            System.out.println("║    BENUTZER ERFOLGREICH REGISTRIERT ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
+                }else{
+                System.out.println("\n╔══════════════════════════════════════╗");
+		        System.out.println("║  UNGÜLTIGES PASSWORT.                ║");
+		        System.out.println("║  DAS PASSWORT MUSS FOLGENDES HABEN:  ║");
+		        System.out.println("║  - 8 ZEICHEN ODER MEHR               ║");
+		        System.out.println("║  - MINDESTENS 1 BUCHSTABE            ║");
+		        System.out.println("║  - 1 ZAHL MINDESTENS                 ║");
+		        System.out.println("║  - 1 SONDERZEICHEN (!@$#%*.)         ║");
+		        System.out.println("╚══════════════════════════════════════╝\n");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -442,6 +485,11 @@ public class Usuarios {
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
+            if(senha.length() >= 8 &&
+            senha.matches(".*[a-zA-Z].*") &&
+            senha.matches(".*[0-9].*") &&
+            senha.matches(".*[!@$#%*.].*")){
+
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
                 pstmt.setString(1, usuario);
@@ -466,6 +514,16 @@ public class Usuarios {
 		            System.out.println("║  UTILISATEUR ENREGISTRÉ AVEC SUCCÈS ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
+            }else{
+                System.out.println("\n╔════════════════════════════════════╗");
+		        System.out.println("║  MOT DE PASSE INVALIDE.            ║");
+		        System.out.println("║  LE MOT DE PASSE DOIT AVOIR:       ║");
+		        System.out.println("║  - 8 CARACTÈRES OU PLUS            ║");
+		        System.out.println("║  - 1 LETTRE AU MOINS               ║");
+		        System.out.println("║  - 1 NUMÉRO AU MOINS               ║");
+		        System.out.println("║  - 1 CARACTÈRE SPÉCIAL (!@$#%*.)   ║");
+		        System.out.println("╚════════════════════════════════════╝\n");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -583,6 +641,11 @@ public class Usuarios {
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
+            if(senha.length() >= 8 &&
+            senha.matches(".*[a-zA-Z].*") &&
+            senha.matches(".*[0-9].*") &&
+            senha.matches(".*[!@$#%*.].*")){
+
                 String sqlVerifica = "SELECT COUNT(*) FROM usuarios WHERE nome_usuario = ?";
                 PreparedStatement pstmt = conn.prepareStatement(sqlVerifica);
                 pstmt.setString(1, usuario);
@@ -607,6 +670,15 @@ public class Usuarios {
 		            System.out.println("║    USUÁRIO CADASTRADO COM SUCESSO   ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
+            }else{
+                System.out.println("\n╔═════════════════════════════════════╗");
+		        System.out.println("║ SENHA INVÁLIDA. SENHA DEVE POSSUIR: ║");
+		        System.out.println("║ - 8 CARACTERES OU MAIS              ║");
+		        System.out.println("║ - 1 LETRA NO MÍNIMO                 ║");
+		        System.out.println("║ - 1 NÚMERO NO MÍNIMO                ║");
+		        System.out.println("║ - 1 CARACTER ESPECIAL (!@$#%*.)     ║");
+		        System.out.println("╚═════════════════════════════════════╝\n");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
