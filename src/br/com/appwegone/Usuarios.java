@@ -667,7 +667,7 @@ public class Usuarios {
 
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
-		            System.out.println("║    USUARIO REGISTRADO EXITOSAMENTE  ║");
+		            System.out.println("║   USUARIO REGISTRADO EXITOSAMENTE   ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
             }else{
@@ -707,7 +707,7 @@ public class Usuarios {
                     case 1:
                         Thread.sleep(300);
                         String tipoUsuario = Usuarios.fazer_login_es(leiaStr);
-                        if (tipoUsuario.equals("inválido") || tipoUsuario.equals("error")) {
+                        if (tipoUsuario.equals("invalido") || tipoUsuario.equals("erro")) {
                             break;
                         } else {
                             return tipoUsuario;
@@ -721,7 +721,7 @@ public class Usuarios {
                     default:
                         Thread.sleep(300);
                         System.out.println("\n╔═════════════════════════════════════╗");
-                        System.out.println("║          OPCIÓN INVÁLIDA           ║");
+                        System.out.println("║            OPCIÓN INVÁLIDA          ║");
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
@@ -741,7 +741,7 @@ public class Usuarios {
 
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║         INICIAR SESIÓN EN WEGONE      ║");
+            System.out.println("║       INICIAR SESIÓN EN WEGONE      ║");
             System.out.println("╚═════════════════════════════════════╝");
             System.out.print("  ? - Usuario: ");
             usuario = leiaStr.nextLine();
@@ -759,14 +759,14 @@ public class Usuarios {
                     String tipo = rs.getString("tipo_usuario");
         
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("      ¡INICIÓ SESIÓN! BIENVENIDO A WEGONE ");
-                    System.out.println("          Usuario: " + usuario + " ");
+                    System.out.println("    ¡INICIÓ SESIÓN! BIENVENIDO A WEGONE ");
+                    System.out.println("           Usuario: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
         
                     return tipo;
                 } else {
-                    System.out.println("\n╔═══════════════════════════════════════╗");
+                    System.out.println("\n╔════════════════════════════════════════════╗");
                     System.out.println("║ ¡NOMBRE DE USUARIO O CONTRASEÑA INVÁLIDOS! ║");
                     System.out.println("╚════════════════════════════════════════════╝");
                     Thread.sleep(300);
