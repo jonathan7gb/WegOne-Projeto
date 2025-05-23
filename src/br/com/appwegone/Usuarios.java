@@ -633,11 +633,11 @@ public class Usuarios {
         try (Connection conn = Conexao.getConexao()) {
         
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║          CADASTRAR USUÁRIO          ║");
+            System.out.println("║          REGISTRAR USUARIO          ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("  ? - Usuário: ");
+            System.out.print("  ? - Usuario: ");
             String usuario = leiaStr.nextLine();
-            System.out.print("  ? - Senha: ");
+            System.out.print("  ? - Contraseña: ");
             String senha = leiaStr.nextLine();
             Thread.sleep(300);
 
@@ -655,7 +655,7 @@ public class Usuarios {
                 
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║    NOME DE USUÁRIO JÁ CADASTRADO!   ║");
+                    System.out.println("║        ¡USUARIO YA REGISTRADO!      ║");
                     System.out.println("╚═════════════════════════════════════╝\n");
                 }else{
                     String tipo_user = "usuario";
@@ -667,16 +667,17 @@ public class Usuarios {
 
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
-		            System.out.println("║    USUÁRIO CADASTRADO COM SUCESSO   ║");
+		            System.out.println("║    USUARIO REGISTRADO EXITOSAMENTE  ║");
 		            System.out.println("╚═════════════════════════════════════╝\n");
                 }
             }else{
                 System.out.println("\n╔═════════════════════════════════════╗");
-		        System.out.println("║ SENHA INVÁLIDA. SENHA DEVE POSSUIR: ║");
-		        System.out.println("║ - 8 CARACTERES OU MAIS              ║");
-		        System.out.println("║ - 1 LETRA NO MÍNIMO                 ║");
-		        System.out.println("║ - 1 NÚMERO NO MÍNIMO                ║");
-		        System.out.println("║ - 1 CARACTER ESPECIAL (!@$#%*.)     ║");
+		        System.out.println("║ CONTRASEÑA INVÁLIDA.                ║");
+		        System.out.println("║ LA CONTRASEÑA ES NECESARIA:         ║");
+		        System.out.println("║ - 8 PERSONAJES O MÁS                ║");
+		        System.out.println("║ - 1 CARTAS AL MENOS                 ║");
+		        System.out.println("║ - 1 NÚMERO MÍNIMO                   ║");
+		        System.out.println("║ - 1 CARÁCTER ESPECIAL (!@$#%*.)     ║");
 		        System.out.println("╚═════════════════════════════════════╝\n");
             }
 
@@ -693,20 +694,20 @@ public class Usuarios {
             while (true) {
                 Thread.sleep(300);
                 System.out.println("\n╔═════════════════════════════════════╗");
-                System.out.println("║         LOGIN SISTEMA WEGONE        ║");
+                System.out.println("║ INICIO DE SESIÓN DEL SISTEMA WEGONE ║");
                 System.out.println("╚═════════════════════════════════════╝");
-                System.out.println(" 1 - Fazer Login");
-                System.out.println(" 2 - Fazer Cadastro");
+                System.out.println(" 1 - Acceso");
+                System.out.println(" 2 - Registro");
                 System.out.println("═══════════════════════════════════════");
                 Thread.sleep(300);
-                System.out.print(" ? - Escolha: ");
+                System.out.print(" ? - Elección: ");
                 int escolha_menu_login = leiaNum.nextInt();
     
                 switch (escolha_menu_login) {
                     case 1:
                         Thread.sleep(300);
                         String tipoUsuario = Usuarios.fazer_login_es(leiaStr);
-                        if (tipoUsuario.equals("invalido") || tipoUsuario.equals("erro")) {
+                        if (tipoUsuario.equals("inválido") || tipoUsuario.equals("error")) {
                             break;
                         } else {
                             return tipoUsuario;
@@ -720,7 +721,7 @@ public class Usuarios {
                     default:
                         Thread.sleep(300);
                         System.out.println("\n╔═════════════════════════════════════╗");
-                        System.out.println("║          ESCOLHA INVÁLIDA           ║");
+                        System.out.println("║          OPCIÓN INVÁLIDA           ║");
                         System.out.println("╚═════════════════════════════════════╝");
                         break;
                 }
@@ -740,11 +741,11 @@ public class Usuarios {
 
             Thread.sleep(300);
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║         FAZER LOGIN WEGONE          ║");
+            System.out.println("║         INICIAR SESIÓN EN WEGONE      ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.print("  ? - Usuário: ");
+            System.out.print("  ? - Usuario: ");
             usuario = leiaStr.nextLine();
-            System.out.print("  ? - Senha: ");
+            System.out.print("  ? - Contraseña: ");
             senha = leiaStr.nextLine();
             Thread.sleep(300);
            
@@ -758,16 +759,16 @@ public class Usuarios {
                     String tipo = rs.getString("tipo_usuario");
         
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("      LOGADO! BEM-VINDO AO WEGONE ");
-                    System.out.println("          Usuário: " + usuario + " ");
+                    System.out.println("      ¡INICIÓ SESIÓN! BIENVENIDO A WEGONE ");
+                    System.out.println("          Usuario: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
         
                     return tipo;
                 } else {
-                    System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║     USUÁRIO OU SENHA INVÁLIDOS!     ║");
-                    System.out.println("╚═════════════════════════════════════╝");
+                    System.out.println("\n╔═══════════════════════════════════════╗");
+                    System.out.println("║ ¡NOMBRE DE USUARIO O CONTRASEÑA INVÁLIDOS! ║");
+                    System.out.println("╚════════════════════════════════════════════╝");
                     Thread.sleep(300);
                     return "invalido";
                 }

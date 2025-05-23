@@ -14,32 +14,32 @@ public class Espanhol{
             Thread.sleep(350);
             
             System.out.println("\n╔═════════════════════════════════════╗");
-            System.out.println("║           REGISTER GUIDANCE         ║");
+            System.out.println("║           GUÍA DE REGISTRO            ║");
             System.out.println("╚═════════════════════════════════════╝");
-            System.out.println("  1 - 🗂️ Operation manual                    ");
-            System.out.println("  2 - 🗂️ Safety procedure                    ");
-            System.out.println("  3 - 🗂️ Maintenance and Repairs             ");
-            System.out.println("  4 - 🗂️ Tests and Diagnostics               ");
-            System.out.println("  5 - 🗂️ Sectoral Conduct and Operations Manual");
+            System.out.println("  1 - 🗂️ Operación                    ");
+            System.out.println("  2 - 🗂️ Procedimiento de seguridad                    ");
+            System.out.println("  3 - 🗂️ Mantenimiento y Repareciones            ");
+            System.out.println("  4 - 🗂️ Pruebas y diagnósticos               ");
+            System.out.println("  5 - 🗂️ Manual de Conducta y Operaciones Sectoriales");
             System.out.println("═══════════════════════════════════════");
-            System.out.print("  ? - Enter the type of orientation: ");
+            System.out.print("  ? - Introduzca el tipo de orientación: ");
             int tipoLeitura = leiaNum.nextInt();
                 
             switch(tipoLeitura){
                 case 1:
-                    tipo = "Operation manual"; 
+                    tipo = "Manual de operación"; 
                     break;
                 case 2:
-                    tipo = "Safety procedure"; 
+                    tipo = "Procedimiento de seguridad"; 
                     break;
                 case 3:
-                    tipo = "Maintenance and Repairs"; 
+                    tipo = "Mantenimiento y Reparaciones"; 
                     break;
                 case 4:
-                    tipo = "Tests and Diagnostics"; 
+                    tipo = "Pruebas y diagnósticos"; 
                     break;
                 case 5:
-                    tipo = "Sectoral Conduct and Operations Manual"; 
+                    tipo = "Manual de Conducta y Operaciones"; 
                     break;
                 default:
                     tipo = ""; 
@@ -48,11 +48,11 @@ public class Espanhol{
             if(tipo.equals("")){
                 Thread.sleep(350);
             	System.out.println("\n╔═════════════════════════════════════╗");
-	            System.out.println("║         ORIENTATION INVALID         ║");
+	            System.out.println("║         ORIENTACIÓN NO VÁLIDA         ║");
 	            System.out.println("╚═════════════════════════════════════╝\n");
             }else{
             	Thread.sleep(350);
-            	System.out.print("  ? - Title of the orientation: ");
+            	System.out.print("  ? - Título de la orientación: ");
                 titulo_orientacao = leiaStr.nextLine();
 
                 Thread.sleep(350);
@@ -67,10 +67,10 @@ public class Espanhol{
                 if (quantidade > 0) {
                     
                     System.out.println("\n╔═════════════════════════════════════╗");
-                    System.out.println("║   ERROR! TITLE ALREADY REGISTERED   ║");
+                    System.out.println("║   ¡ERROR! TÍTULO YA REGISTRADO        ║");
                     System.out.println("╚═════════════════════════════════════╝\n");
                 } else {
-                	System.out.print("  ? - Orientation Content: ");
+                	System.out.print("  ? - Contenido de orientación: ");
 	                conteudo_orientacao = leiaStr.nextLine();
 	                
 	                String sql2 = "INSERT INTO orientacoesEspanhol (titulo_orientacaoES, tipo_orientacaoES, conteudo_orientacaoES) VALUES (?, ?, ?)";
@@ -82,7 +82,7 @@ public class Espanhol{
 
                     Thread.sleep(350);
 	                System.out.println("\n╔═══════════════════════════════════════╗");
-		            System.out.println("║  ORIENTATION SUCCESSFULLY REGISTERED  ║");
+		            System.out.println("║  ORIENTACIÓN REGISTRADA CON ÉXITO       ║");
 		            System.out.println("╚═══════════════════════════════════════╝\n");
                 }
             }
@@ -108,8 +108,8 @@ public class Espanhol{
             	encontrado = true;
             	System.out.println("╔══════════════════════════════════════════╗");
                 System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoES"), rs.getString("titulo_orientacaoES"));
-                System.out.println("   Type: " + rs.getString("tipo_orientacaoES") );
-                System.out.println("   Content: " + rs.getString("conteudo_orientacaoES"));
+                System.out.println("   Tipo: " + rs.getString("tipo_orientacaoES") );
+                System.out.println("   Contenido: " + rs.getString("conteudo_orientacaoES"));
                 System.out.println("╚══════════════════════════════════════════╝");
                 Thread.sleep(350);            
             }
@@ -119,8 +119,8 @@ public class Espanhol{
             if(encontrado != true) {
                 Thread.sleep(350);
             	System.out.println("╔═════════════════════════════════════╗");
-	            System.out.println("║        NO ORIENTATION FOUND         ║");
-	            System.out.println("╚═════════════════════════════════════╝\n");
+	            System.out.println("║     NO SE ENCONTRÓ ORIENTACIÓN      ║");
+	            System.out.println("╚══════════════════════════════════════╝\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -141,19 +141,19 @@ public class Espanhol{
             
             switch(tipoOrientacao) {
             case 1:
-            	tipoOrientacaoStr = "Operation manual"; 
+            	tipoOrientacaoStr = "Manual de operacón"; 
                 break;
             case 2:
-            	tipoOrientacaoStr = "Safety procedure"; 
+            	tipoOrientacaoStr = "Procedimiento de seguridad"; 
                 break;
             case 3:
-            	tipoOrientacaoStr = "Maintenance and Repairs"; 
+            	tipoOrientacaoStr = "Mantenimiento y Reparaciones"; 
                 break;
             case 4:
-            	tipoOrientacaoStr = "Tests and Diagnostics"; 
+            	tipoOrientacaoStr = "Pruebas y diagnósticos"; 
                 break;
             case 5:
-            	tipoOrientacaoStr = "Sectoral Conduct and Operations Manual"; 
+            	tipoOrientacaoStr = "Manual de Conducta y Operaciones Sectoriales"; 
                 break;
             default:
             	tipoOrientacaoStr = ""; 
@@ -170,8 +170,8 @@ public class Espanhol{
             	encontrado = true;
             	System.out.println("╔══════════════════════════════════════════╗");
                 System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoES"), rs.getString("titulo_orientacaoES"));
-                System.out.println("   Type: " + rs.getString("tipo_orientacaoES") );
-                System.out.println("   Content: " + rs.getString("conteudo_orientacaoES"));
+                System.out.println("   Tipo: " + rs.getString("tipo_orientacaoES") );
+                System.out.println("   Contenido: " + rs.getString("conteudo_orientacaoES"));
                 System.out.println("╚══════════════════════════════════════════╝");
             	
             }
@@ -180,8 +180,8 @@ public class Espanhol{
             }
             if(encontrado != true) {
             	System.out.println("╔═════════════════════════════════════╗");
-	            System.out.println("║        NO ORIENTATION FOUND         ║");
-	            System.out.println("╚═════════════════════════════════════╝\n");
+	            System.out.println("║    NO SE ENCONTRÓ ORIENTACÓN        ║");
+	            System.out.println("╚══════════════════════════════════════╝\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -206,8 +206,8 @@ public class Espanhol{
                 	encontrado = true;
                 	System.out.println("╔══════════════════════════════════════════╗");
                     System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoES"), rs.getString("titulo_orientacaoES"));
-                    System.out.println("   Type: " + rs.getString("tipo_orientacaoES") );
-                    System.out.println("   Content: " + rs.getString("conteudo_orientacaoES"));
+                    System.out.println("   Tipo: " + rs.getString("tipo_orientacaoES") );
+                    System.out.println("   Contenido: " + rs.getString("conteudo_orientacaoES"));
                     System.out.println("╚══════════════════════════════════════════╝");
                 }
                 if(encontrado == true) {
@@ -215,8 +215,8 @@ public class Espanhol{
                 }
                 if(encontrado != true) {
                 	System.out.println("╔═════════════════════════════════════╗");
-    	            System.out.println("║        NO ORIENTATION FOUND         ║");
-    	            System.out.println("╚═════════════════════════════════════╝\n");
+    	            System.out.println("║  NO SE ENCONTRÓ ORIENTACIÓN         ║");
+    	            System.out.println("╚══════════════════════════════════════╝\n");
                 }
                 
             } catch (Exception e) {
@@ -242,8 +242,8 @@ public class Espanhol{
                 	encontrado = true;
                 	System.out.println("╔══════════════════════════════════════════╗");
                     System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoES"), rs.getString("titulo_orientacaoES"));
-                    System.out.println("   Type: " + rs.getString("tipo_orientacaoES") );
-                    System.out.println("   Content: " + rs.getString("conteudo_orientacaoES"));
+                    System.out.println("   Tipo: " + rs.getString("tipo_orientacaoES") );
+                    System.out.println("   Contenido: " + rs.getString("conteudo_orientacaoES"));
                     System.out.println("╚══════════════════════════════════════════╝");
                 }
                 
@@ -252,7 +252,7 @@ public class Espanhol{
                 }
                 if(encontrado != true) {
                 	System.out.println("╔═════════════════════════════════════╗");
-    	            System.out.println("║        NO ORIENTATION FOUND         ║");
+    	            System.out.println("║  NO SE ENCONTRÓ ORIENTACIÓN         ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }
                 
@@ -273,9 +273,9 @@ public class Espanhol{
     			String conteudo_orientacao = null;
     			
     			System.out.println("\n╔═════════════════════════════════════╗");
-                System.out.println("║          EDIT ORIENTATION           ║");
+                System.out.println("║      ORIENTACIÓN DE EDICIÓN           ║");
                 System.out.println("╚═════════════════════════════════════╝");
-                System.out.print("  ? - Orientation ID to update: ");
+                System.out.print("  ? - ID de orientación para actualizar: ");
                 int codigo_orientacao = leiaNum.nextInt();
                 
                 String sql = "select * from orientacoesEspanhol where codigo_orientacaoES = ?; ";
@@ -291,17 +291,17 @@ public class Espanhol{
                 	encontrado = true;
                 	System.out.println("\n╔══════════════════════════════════════════╗");
                     System.out.printf("   [%d] %s                               %n", rs.getInt("codigo_orientacaoES"), rs.getString("titulo_orientacaoES"));
-                    System.out.println("   Type: " + rs.getString("tipo_orientacaoES") );
-                    System.out.println("   Content: " + rs.getString("conteudo_orientacaoES"));
+                    System.out.println("   Tipo: " + rs.getString("tipo_orientacaoES") );
+                    System.out.println("   Contenido: " + rs.getString("conteudo_orientacaoES"));
                     System.out.println("╚══════════════════════════════════════════╝\n");
                     
-                    System.out.print("  ? - New title (press Enter to keep current): ");
+                    System.out.print("  ? - Nuevo título (presione Enter para mantenerlo actualizado)): ");
                     titulo_orientacao = leiaStr.nextLine();
                     if (titulo_orientacao.trim().isEmpty()) {
                     	titulo_orientacao = tituloAtual;
                     }
 
-                    System.out.print("  ? - New content (press Enter to keep current): ");
+                    System.out.print("  ? - Nuevo título (presione Enter para mantenerlo actualizado): ");
                     conteudo_orientacao = leiaStr.nextLine();
                     if (conteudo_orientacao.trim().isEmpty()) {
                     	conteudo_orientacao = conteudoAtual;
@@ -310,7 +310,7 @@ public class Espanhol{
                 }
                 if(encontrado != true) {
                 	System.out.println("\n╔═════════════════════════════════════╗");
-    	            System.out.println("║        NO ORIENTATION FOUND         ║");
+    	            System.out.println("║    NO SE ENCONTRÓ ORIENTACIÓN         ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }else {
 
@@ -325,11 +325,11 @@ public class Espanhol{
 
                 if (linhasAfetadas > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
-    	            System.out.println("║    UPDATE COMPLETED SUCCESSFULLY    ║");
+    	            System.out.println("║ ACTUALIZACIÓN COMPLETADA EXITOSAMENTE  ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }else {
                 	System.out.println("\n╔═════════════════════════════════════╗");
-    	            System.out.println("║             ID NOT FOUND            ║");
+    	            System.out.println("║            ID NO ENCONTRADO           ║");
     	            System.out.println("╚═════════════════════════════════════╝\n");
                 }
              }
@@ -349,9 +349,9 @@ public class Espanhol{
     	    			boolean encontrado = false;
     	    			
     	    			System.out.println("\n╔═════════════════════════════════════╗");
-    	                System.out.println("║         REMOVE ORIENTATION          ║");
+    	                System.out.println("║      ELIMINAR LA ORIENTACIÓN        ║");
     	                System.out.println("╚═════════════════════════════════════╝");
-    	                System.out.print("  ? - Orientation ID to remove: ");
+    	                System.out.print("  ? - ID de orientación para eliminar: ");
     	                int codigo_orientacao = leiaNum.nextInt();   
     	                
     	                String sql = "select * from orientacoesEspanhol where codigo_orientacaoES = ?; ";
@@ -372,7 +372,7 @@ public class Espanhol{
     	                }
     	                if(encontrado != true) {
     	                	System.out.println("\n╔═════════════════════════════════════╗");
-    	    	            System.out.println("║        NO ORIENTATION FOUND         ║");
+    	    	            System.out.println("║    NO SE ENCONTRÓ ORIENTACIÓN         ║");
     	    	            System.out.println("╚═════════════════════════════════════╝\n");
     	    	            Thread.sleep(300);
     	                }else {
@@ -386,12 +386,12 @@ public class Espanhol{
 
     	                if (linhasAfetadas > 0) {
     	                    System.out.println("╔═════════════════════════════════════╗");
-    	    	            System.out.println("║    REMOVAL SUCCESSFULLY COMPLETED   ║");
+    	    	            System.out.println("║  ELIMINACIÓN COMPLETADA CON ÉXITO   ║");
     	    	            System.out.println("╚═════════════════════════════════════╝\n");
     	    	            Thread.sleep(300);
     	                }else {
     	                	System.out.println("\n╔═════════════════════════════════════╗");
-    	    	            System.out.println("║            ID NOT FOUND             ║");
+    	    	            System.out.println("║          ID NO ENCONTRADO             ║");
     	    	            System.out.println("╚═════════════════════════════════════╝\n");
     	                }
     	             }
@@ -410,9 +410,9 @@ public class Espanhol{
     	    			Thread.sleep(300);
     	    			System.out.println("\n╔═════════════════════════════════════╗");
     	    			Thread.sleep(300);
-	    	            System.out.println("     🌐  WEGONE SYSTEM CLOSED!  🌐    ");
+	    	            System.out.println("     🌐  ¡SISTEMA WEGONE CERRADO!  🌐    ");
 	    	            Thread.sleep(300);
-	    	            System.out.println("        ✨ COME BACK ANYTIME ✨       ");
+	    	            System.out.println("        ✨ VUELVE EN CUALQUIER MOMENTO ✨       ");
 	    	            Thread.sleep(300);
 	    	            System.out.println("╚═════════════════════════════════════╝\n");
 
