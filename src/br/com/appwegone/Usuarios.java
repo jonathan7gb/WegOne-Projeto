@@ -34,7 +34,7 @@ public class Usuarios {
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║    NOME DE USUÁRIO JÁ CADASTRADO!   ║");
-                    System.out.println("╚═════════════════════════════════════╝\n");
+                    System.out.println("╚═════════════════════════════════════╝");
                 }else{
                     String tipo_user = "usuario";
                     String sql2 = "INSERT INTO usuarios (nome_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?)";
@@ -46,7 +46,7 @@ public class Usuarios {
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
 		            System.out.println("║    USUÁRIO CADASTRADO COM SUCESSO   ║");
-		            System.out.println("╚═════════════════════════════════════╝\n");
+		            System.out.println("╚═════════════════════════════════════╝");
                 }
             }else{
                 System.out.println("\n╔═════════════════════════════════════╗");
@@ -55,7 +55,7 @@ public class Usuarios {
 		        System.out.println("║ - 1 LETRA NO MÍNIMO                 ║");
 		        System.out.println("║ - 1 NÚMERO NO MÍNIMO                ║");
 		        System.out.println("║ - 1 CARACTER ESPECIAL (!@$#%*.)     ║");
-		        System.out.println("╚═════════════════════════════════════╝\n");
+		        System.out.println("╚═════════════════════════════════════╝");
             }
 
         } catch (Exception e) {
@@ -137,7 +137,7 @@ public class Usuarios {
         
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("     LOGADO! BEM-VINDO AO WEGONE ");
-                    System.out.println("          Usuário: " + usuario + " ");
+                    System.out.println("        Usuário: " + usuario + " ");
                     System.out.println("╚═════════════════════════════════════╝\n");
                     Thread.sleep(300);
         
@@ -189,7 +189,7 @@ public class Usuarios {
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║    USERNAME ALREADY REGISTERED!     ║");
-                    System.out.println("╚═════════════════════════════════════╝\n");
+                    System.out.println("╚═════════════════════════════════════╝");
                 }else{
                     String tipo_user = "usuario";
                     String sql2 = "INSERT INTO usuarios (nome_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?)";
@@ -201,7 +201,7 @@ public class Usuarios {
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
 		            System.out.println("║    USER REGISTERED SUCCESSFULLY     ║");
-		            System.out.println("╚═════════════════════════════════════╝\n");
+		            System.out.println("╚═════════════════════════════════════╝");
                 }
             }else{
                 System.out.println("\n╔═══════════════════════════════════════╗");
@@ -344,7 +344,7 @@ public class Usuarios {
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║   BENUTZERNAME BEREITS REGISTRIERT! ║");
-                    System.out.println("╚═════════════════════════════════════╝\n");
+                    System.out.println("╚═════════════════════════════════════╝");
                 }else{
                     String tipo_user = "usuario";
                     String sql2 = "INSERT INTO usuarios (nome_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?)";
@@ -356,7 +356,7 @@ public class Usuarios {
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
 		            System.out.println("║    BENUTZER ERFOLGREICH REGISTRIERT ║");
-		            System.out.println("╚═════════════════════════════════════╝\n");
+		            System.out.println("╚═════════════════════════════════════╝");
                 }
                 }else{
                 System.out.println("\n╔══════════════════════════════════════╗");
@@ -366,7 +366,7 @@ public class Usuarios {
 		        System.out.println("║  - MINDESTENS 1 BUCHSTABE            ║");
 		        System.out.println("║  - 1 ZAHL MINDESTENS                 ║");
 		        System.out.println("║  - 1 SONDERZEICHEN (!@$#%*.)         ║");
-		        System.out.println("╚══════════════════════════════════════╝\n");
+		        System.out.println("╚══════════════════════════════════════╝");
             }
 
         } catch (Exception e) {
@@ -500,7 +500,7 @@ public class Usuarios {
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║  NOM D'UTILISATEUR DÉJÀ ENREGISTRÉ! ║");
-                    System.out.println("╚═════════════════════════════════════╝\n");
+                    System.out.println("╚═════════════════════════════════════╝");
                 }else{
                     String tipo_user = "usuario";
                     String sql2 = "INSERT INTO usuarios (nome_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?)";
@@ -512,7 +512,7 @@ public class Usuarios {
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
 		            System.out.println("║  UTILISATEUR ENREGISTRÉ AVEC SUCCÈS ║");
-		            System.out.println("╚═════════════════════════════════════╝\n");
+		            System.out.println("╚═════════════════════════════════════╝");
                 }
             }else{
                 System.out.println("\n╔════════════════════════════════════╗");
@@ -522,7 +522,7 @@ public class Usuarios {
 		        System.out.println("║  - 1 LETTRE AU MOINS               ║");
 		        System.out.println("║  - 1 NUMÉRO AU MOINS               ║");
 		        System.out.println("║  - 1 CARACTÈRE SPÉCIAL (!@$#%*.)   ║");
-		        System.out.println("╚════════════════════════════════════╝\n");
+		        System.out.println("╚════════════════════════════════════╝");
             }
 
         } catch (Exception e) {
@@ -656,7 +656,7 @@ public class Usuarios {
                 if (quantidade > 0) {
                     System.out.println("\n╔═════════════════════════════════════╗");
                     System.out.println("║        ¡USUARIO YA REGISTRADO!      ║");
-                    System.out.println("╚═════════════════════════════════════╝\n");
+                    System.out.println("╚═════════════════════════════════════╝");
                 }else{
                     String tipo_user = "usuario";
                     String sql2 = "INSERT INTO usuarios (nome_usuario, senha_usuario, tipo_usuario) VALUES (?, ?, ?)";
@@ -668,7 +668,7 @@ public class Usuarios {
 	                stmt.executeUpdate();
                     System.out.println("\n╔═════════════════════════════════════╗");
 		            System.out.println("║   USUARIO REGISTRADO EXITOSAMENTE   ║");
-		            System.out.println("╚═════════════════════════════════════╝\n");
+		            System.out.println("╚═════════════════════════════════════╝");
                 }
             }else{
                 System.out.println("\n╔═════════════════════════════════════╗");
@@ -678,7 +678,7 @@ public class Usuarios {
 		        System.out.println("║ - 1 CARTAS AL MENOS                 ║");
 		        System.out.println("║ - 1 NÚMERO MÍNIMO                   ║");
 		        System.out.println("║ - 1 CARÁCTER ESPECIAL (!@$#%*.)     ║");
-		        System.out.println("╚═════════════════════════════════════╝\n");
+		        System.out.println("╚═════════════════════════════════════╝");
             }
 
         } catch (Exception e) {

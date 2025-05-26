@@ -25,7 +25,6 @@ public class MainWO {
             System.out.println("═══════════════════════════════════════");
             System.out.print("  ? - Escolha/choice: ");
 			escolhaIdioma = leiaNum.nextInt(); //Escolha do idioma do usuário
-			System.out.println("");
 	        
 			switch(escolhaIdioma) {
 				case 1: 
